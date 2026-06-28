@@ -81,7 +81,7 @@ export const permissions = [
     name: 'Accessibility Service',
     id: 'android.permission.BIND_ACCESSIBILITY_SERVICE',
     needed: 'For focus protection',
-    why: 'Used only during active focus sessions to detect blocked apps and return you to your Focus Space. It reads package and class names for enforcement — it does not read message text, passwords, keystrokes, or screen content.',
+    why: 'Used only during active focus sessions to detect blocked apps, recents, popup, and split-screen bypass attempts, then return you to Focus Space or apply your strict focus rule. It reads package and class names for enforcement — it does not read message text, passwords, keystrokes, or personal screen content.',
   },
   {
     name: 'Display over other apps',
@@ -93,7 +93,13 @@ export const permissions = [
     name: 'Device Admin',
     id: 'android.permission.BIND_DEVICE_ADMIN',
     needed: 'Optional strict mode',
-    why: 'Optional. Enables a throttled device lock after repeated bypass attempts in strict focus. Never enabled by default, requested only from the Focus setup, and emergency calls stay available.',
+    why: 'Optional for normal app use; required only for strict Zen Shield lock behavior. It can lock the device after blocked-app or bypass violations during an active strict focus session. It is never enabled by default and is explained before Android setup opens.',
+  },
+  {
+    name: 'Exact alarms',
+    id: 'android.permission.SCHEDULE_EXACT_ALARM',
+    needed: 'Reminders & session end',
+    why: 'Helps local habit reminders and focus-session end alarms fire on time when Android allows exact scheduling. If exact alarms are not permitted, KaiZenly+ falls back to inexact scheduling instead of forcing the permission.',
   },
   {
     name: 'Notifications',

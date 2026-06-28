@@ -36,9 +36,27 @@ import { permissions } from "../data/app.mjs";
       <div class="card" style="margin-top:32px">
         <h3 style="font-family:var(--serif);font-weight:400;font-size:1.4rem">Prominent disclosure</h3>
         <p style="margin-top:10px">
-          Before the app sends you to Android’s Accessibility or Device Admin settings, it shows a
-          clear explanation of why the permission is needed and what it does. Device Admin (strict
-          mode) is never enabled by default, and emergency calls always remain available.
+          Before the app sends you to Android’s Accessibility or Device Admin settings, it shows the
+          same clear disclosure from onboarding, Focus setup, and Profile permission health. The
+          disclosure explains why the permission is needed, when it is active, what it does not
+          collect or control, and that normal habits, journal, mood, and insights still work without
+          strict Zen Shield permissions.
+        </p>
+        <p style="margin-top:10px">
+          Accessibility is limited to active focus enforcement and does not read messages,
+          passwords, keystrokes, or personal screen content. Device Admin is used only for active
+          strict focus sessions to lock the device after blocked-app or bypass violations; it is not
+          used to erase data, change passwords, or control the phone outside that session.
+        </p>
+      </div>
+
+      <div class="card" style="margin-top:18px">
+        <h3 style="font-family:var(--serif);font-weight:400;font-size:1.4rem">Exact-alarm policy</h3>
+        <p style="margin-top:10px">
+          KaiZenly+ uses <code>SCHEDULE_EXACT_ALARM</code> only for local reminders and focus-session
+          end timing. It does <strong>not</strong> request <code>USE_EXACT_ALARM</code>, which is
+          reserved for alarm-clock and calendar-style apps. If Android does not allow exact alarms,
+          KaiZenly+ falls back to inexact scheduling gracefully.
         </p>
       </div>
 
