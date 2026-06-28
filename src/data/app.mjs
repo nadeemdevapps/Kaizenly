@@ -182,9 +182,9 @@ export const featureGroups = [
     summary: 'Reflect on your day with rich entries and integrated mood check-ins.',
     points: [
       'Journal entries with title, body, tags, activities, and prompt templates.',
-      'Mood check-ins scored 1–5 with labels, integrated into the journal flow.',
+      'Mood check-ins scored 1–5 with labels, flexible past dates, and a consistent 12-hour time picker.',
       'Optional photos and voice notes, stored in app-private storage.',
-      'Case-insensitive full-text search and Markdown export of all entries.',
+      'Case-insensitive full-text search and selective Markdown sharing for the entries you choose.',
     ],
   },
   {

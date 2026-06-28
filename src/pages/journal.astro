@@ -15,7 +15,7 @@ const gallery = [
 <Base
   title="Journal & Mood Tracker | Private, On-Device"
   path="/journal/"
-  description="Mood-aware journaling in KaiZenly+: tags, activities, gratitude templates, optional photos and voice notes, full-text search, and Markdown export — all stored privately on your device."
+  description="Mood-aware journaling in KaiZenly+: tags, activities, gratitude templates, flexible past dates, selective sharing, optional photos and voice notes, and full-text search — all stored privately on your device."
 >
   <section class="section">
     <div class="container split">
@@ -28,10 +28,10 @@ const gallery = [
           KaiZenly+ treats them that way.
         </p>
         <ul class="feature-list" style="margin-top:16px">
-          <li>Mood check-ins scored 1–5 with labels, woven into the journal flow.</li>
+          <li>Mood check-ins scored 1–5 with labels, flexible past dates, and a 12-hour time picker.</li>
           <li>Tags, activities, and structured prompt templates (like gratitude).</li>
           <li>Optional photos and voice notes, stored in app-private storage.</li>
-          <li>Full-text search and Markdown export of all your entries.</li>
+          <li>Full-text search and selective sharing, so you can export one entry, one day, or a chosen set.</li>
         </ul>
         <div class="btn-row" style="margin-top:24px">
           <DownloadCta />
@@ -49,6 +49,33 @@ const gallery = [
       <div class="section-head"><h2 class="display-md">Honest, gentle, and yours</h2></div>
       <div class="grid grid-4">
         {gallery.map((s) => <Shot file={s.file} alt={s.alt} caption={s.caption} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head center" style="margin-inline:auto">
+        <span class="eyebrow">Control what leaves the app</span>
+        <h2 class="display-md">Share only the entries you mean to share</h2>
+        <p class="lede measure" style="margin-inline:auto">
+          Journal export is built for real privacy moments: select a specific entry, a whole day,
+          or a hand-picked set before sharing. You stay in control of what goes into the text export.
+        </p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Pick entries</h3>
+          <p>Select and unselect individual journal entries before the share sheet opens.</p>
+        </article>
+        <article class="card">
+          <h3>Share by day</h3>
+          <p>Choose a full date group when you want one day's reflections without exporting everything.</p>
+        </article>
+        <article class="card">
+          <h3>Backdate moods</h3>
+          <p>Add mood entries for earlier days, with a readable 12-hour time picker for the exact moment.</p>
+        </article>
       </div>
     </div>
   </section>
