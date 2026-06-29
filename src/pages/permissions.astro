@@ -2,7 +2,7 @@
 import Base from "../layouts/Base.astro";
 import DownloadCta from "../components/DownloadCta.astro";
 import { withBase } from "../config.mjs";
-import { allowedApps, permissions } from "../data/app.mjs";
+import { allowedApps, permissionGrantModel, permissions } from "../data/app.mjs";
 ---
 
 <Base
@@ -18,6 +18,9 @@ import { allowedApps, permissions } from "../data/app.mjs";
         KaiZenly+ asks for sensitive permissions <strong>only</strong> when you enter a feature that
         needs them — mostly Zen Shield focus. Habits, journaling, mood, and insights work without
         them. Here is exactly what each one is for.
+      </p>
+      <p class="secondary" style="margin-top:14px">
+        {permissionGrantModel.summary}
       </p>
 
       <div class="row-list" style="margin-top:32px">
@@ -41,6 +44,10 @@ import { allowedApps, permissions } from "../data/app.mjs";
           disclosure explains why the permission is needed, when it is active, what it does not
           collect or control. Normal habits, journal, mood, and insights still work without Zen Shield
           enforcement permissions, but protected Zen Shield sessions require Device Admin.
+        </p>
+        <p style="margin-top:10px">
+          These permissions stay off unless the user grants them. KaiZenly+ can open the right Android
+          settings screen or show the Android prompt, but the final decision is always made by the user.
         </p>
         <p style="margin-top:10px">
           Accessibility is limited to active focus enforcement and does not read messages,

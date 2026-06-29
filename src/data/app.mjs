@@ -82,6 +82,13 @@ export const allowedApps = {
     'If your essential banking or productivity app is missing, request it from inside the app.',
 };
 
+export const permissionGrantModel = {
+  summary:
+    'Sensitive Android permissions are off by default. KaiZenly+ cannot silently enable Usage Access, Accessibility Service, Display over other apps, Device Admin, Notifications, Phone state, Microphone, or Battery optimization exemption. The user grants each one manually through Android settings or the Android permission prompt when a feature needs it.',
+  sensitivePermissions:
+    'Usage Access, Accessibility Service, Display over other apps, Device Admin, Notifications, Phone state, Microphone, and Battery optimization exemption',
+};
+
 // --- Permissions (verified against AndroidManifest.xml + docs/PERMISSIONS.md) -
 export const permissions = [
   {
@@ -94,19 +101,19 @@ export const permissions = [
     name: 'Accessibility Service',
     id: 'android.permission.BIND_ACCESSIBILITY_SERVICE',
     needed: 'For focus protection',
-    why: 'Used only during active focus sessions to detect blocked apps, recents, popup, and split-screen bypass attempts, then return you to Focus Space or trigger the session lock rule. It reads package and class names for enforcement — it does not read message text, passwords, keystrokes, or personal screen content.',
+    why: 'Off by default and enabled only by the user in Android Accessibility settings. Used only during active focus sessions to detect blocked apps, recents, popup, and split-screen bypass attempts, then return you to Focus Space or trigger the session lock rule. It reads package and class names for enforcement — it does not read message text, passwords, keystrokes, or personal screen content.',
   },
   {
     name: 'Display over other apps',
     id: 'android.permission.SYSTEM_ALERT_WINDOW',
     needed: 'For focus protection',
-    why: 'Shows the full-screen Focus / Distraction Wall over a blocked app during an active session.',
+    why: 'Off by default and enabled only by the user in Android settings. Shows the full-screen Focus / Distraction Wall over a blocked app during an active session.',
   },
   {
     name: 'Device Admin',
     id: 'android.permission.BIND_DEVICE_ADMIN',
     needed: 'Required for Zen Shield sessions',
-    why: 'Required to start protected Zen Shield focus sessions. During an active session, Device Admin lets KaiZenly+ lock the device after blocked-app or bypass violations, and helps prevent uninstall-based bypass while the session is running. It is explained before Android setup opens and is not used to erase data, change passwords, or control the phone outside an active session.',
+    why: 'Off by default and activated only by the user through Android Device Admin settings. Required to start protected Zen Shield focus sessions. During an active session, Device Admin lets KaiZenly+ lock the device after blocked-app or bypass violations, and helps prevent uninstall-based bypass while the session is running. It is explained before Android setup opens and is not used to erase data, change passwords, or control the phone outside an active session.',
   },
   {
     name: 'Exact alarms',
@@ -118,7 +125,7 @@ export const permissions = [
     name: 'Notifications',
     id: 'android.permission.POST_NOTIFICATIONS',
     needed: 'Reminders & sessions',
-    why: 'Shows habit reminders and the ongoing notification for an active Zen Shield focus session.',
+    why: 'Off by default on newer Android versions until the user allows it. Shows habit reminders and the ongoing notification for an active Zen Shield focus session.',
   },
   {
     name: 'Foreground Service',
@@ -130,19 +137,19 @@ export const permissions = [
     name: 'Phone state (call safety)',
     id: 'android.permission.READ_PHONE_STATE',
     needed: 'Call safety',
-    why: 'Lets focus mode detect an incoming call so it can step aside gracefully instead of blocking your phone during a call.',
+    why: 'Off by default until the user grants it. Lets focus mode detect an incoming call so it can step aside gracefully instead of blocking your phone during a call.',
   },
   {
     name: 'Microphone',
     id: 'android.permission.RECORD_AUDIO',
     needed: 'Only for voice notes',
-    why: 'Used only when you record a voice note inside a journal entry. Recordings stay in app-private storage.',
+    why: 'Off by default until the user grants it. Used only when you record a voice note inside a journal entry. Recordings stay in app-private storage.',
   },
   {
     name: 'Battery optimization exemption',
     id: 'android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS',
     needed: 'Reliable scheduling',
-    why: 'Helps scheduled Zen Shield focus, bedtime mode, and reminders run on time without the system killing them in the background.',
+    why: 'Off by default and approved only by the user in Android battery settings. Helps scheduled Zen Shield focus, bedtime mode, and reminders run on time without the system killing them in the background.',
   },
   {
     name: 'Run at startup',
@@ -377,7 +384,7 @@ export const faqs = [
   },
   {
     q: 'Why does the app ask for permissions?',
-    a: 'Sensitive permissions are only requested when you enter a feature that needs them — mainly Zen Shield focus. Habits, journaling, mood, and insights work without them. See the Permissions page for a line-by-line explanation.',
+    a: `Sensitive permissions are off by default and only requested when you enter a feature that needs them — mainly Zen Shield focus. KaiZenly+ cannot silently enable ${permissionGrantModel.sensitivePermissions}; the user grants them manually through Android settings or a system prompt. Habits, journaling, mood, and insights work without them. See the Permissions page for a line-by-line explanation.`,
   },
   {
     q: 'What is the Google Drive backup used for?',

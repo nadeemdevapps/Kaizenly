@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { absUrl } from "../config.mjs";
-import { allowedApps, app, directAnswers, positioning } from "../data/app.mjs";
+import { allowedApps, app, directAnswers, permissionGrantModel, positioning } from "../data/app.mjs";
 
 export const GET: APIRoute = () => {
   const body = `# KaiZenly+
@@ -57,6 +57,7 @@ ${directAnswers.map((f) => `- ${f.q} ${f.a}`).join("\n")}
 - Banking/payment coverage: ${allowedApps.financeCoverage}
 - Missing essential app request: ${allowedApps.request}
 - Social/streaming guardrail: ${allowedApps.summary}
+- Permission grant model: ${permissionGrantModel.summary}
 - A full-screen Distraction Wall when a blocked app is opened
 - Scheduled Zen Shield focus windows and a bedtime mode that auto-start on chosen days/hours
 - Parachute early-exit tokens; Device Admin protection is required for Zen Shield sessions so blocked-app or bypass violations can lock the device during an active session

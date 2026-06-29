@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { absUrl } from "../config.mjs";
-import { allowedApps, app, permissions, directAnswers, featureGroups, faqs, positioning } from "../data/app.mjs";
+import { allowedApps, app, permissions, directAnswers, featureGroups, faqs, permissionGrantModel, positioning } from "../data/app.mjs";
 
 export const GET: APIRoute = () => {
   const features = featureGroups
@@ -118,6 +118,7 @@ ${allowedApps.summary}
 
 Sensitive permissions are requested only when the user enters a feature that needs them —
 mainly Zen Shield focus. Habits, journaling, mood, and insights work without them.
+${permissionGrantModel.summary}
 
 ${perms}
 

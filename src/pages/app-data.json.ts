@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { absUrl } from "../config.mjs";
-import { allowedApps, app, permissions, directAnswers, featureGroups, positioning } from "../data/app.mjs";
+import { allowedApps, app, permissions, directAnswers, featureGroups, permissionGrantModel, positioning } from "../data/app.mjs";
 import { categories } from "../data/screenshots.mjs";
 
 export const GET: APIRoute = () => {
@@ -32,6 +32,7 @@ export const GET: APIRoute = () => {
       ],
     },
     directAnswers,
+    permissionGrantModel,
     designPhilosophy: {
       summary: "Intentionally calm, distraction-free, focus-first interface that reduces visual noise.",
       monochrome: true,
