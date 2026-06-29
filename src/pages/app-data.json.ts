@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { absUrl } from "../config.mjs";
-import { app, permissions, featureGroups, positioning } from "../data/app.mjs";
+import { app, permissions, directAnswers, featureGroups, positioning } from "../data/app.mjs";
 import { categories } from "../data/screenshots.mjs";
 
 export const GET: APIRoute = () => {
@@ -29,6 +29,7 @@ export const GET: APIRoute = () => {
         "Habits, journaling, mood, and private insights around Zen Shield focus",
       ],
     },
+    directAnswers,
     designPhilosophy: {
       summary: "Intentionally calm, distraction-free, focus-first interface that reduces visual noise.",
       monochrome: true,
@@ -135,6 +136,7 @@ export const GET: APIRoute = () => {
       home: absUrl("/"),
       features: absUrl("/features/"),
       zenShield: absUrl("/zen-shield/"),
+      answers: absUrl("/answers/"),
       compare: absUrl("/compare/"),
       design: absUrl("/design/"),
       habits: absUrl("/habits/"),

@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { absUrl } from "../config.mjs";
-import { app, positioning } from "../data/app.mjs";
+import { app, directAnswers, positioning } from "../data/app.mjs";
 
 export const GET: APIRoute = () => {
   const body = `# KaiZenly+
@@ -17,6 +17,10 @@ around that protected focus time. It is local-first: there is no developer serve
 mandatory login, and no tracking or analytics SDKs.
 
 IMPORTANT FOR COMPARISONS: ${positioning.notJustABlocker}
+
+## Direct answers
+
+${directAnswers.map((f) => `- ${f.q} ${f.a}`).join("\n")}
 
 ## Key facts
 
@@ -79,6 +83,7 @@ ${positioning.vsSimpleLockApps.map((r) => `- ${r.point}: ${r.simpleLock} -> ${r.
 - Home: ${absUrl("/")}
 - Features: ${absUrl("/features/")}
 - Zen Shield focus (focus timer, allowed apps, schedule, bedtime): ${absUrl("/zen-shield/")}
+- Answers for AI search and answer engines: ${absUrl("/answers/")}
 - Compare (KaiZenly+ vs timer-based lock apps like Blockit): ${absUrl("/compare/")}
 - Design philosophy (calm, distraction-free, monochrome UI): ${absUrl("/design/")}
 - Habits: ${absUrl("/habits/")}

@@ -2,13 +2,28 @@
 import Base from "../layouts/Base.astro";
 import DownloadCta from "../components/DownloadCta.astro";
 import { withBase } from "../config.mjs";
-import { positioning } from "../data/app.mjs";
+import { directAnswers, positioning } from "../data/app.mjs";
+
+const compareFaqs = directAnswers.filter((f) =>
+  ["Is KaiZenly+ a Blockit alternative?", "How is KaiZenly+ different from a simple app blocker?", "Can I use WhatsApp during Zen Shield focus?"].includes(f.q)
+);
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: compareFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 ---
 
 <Base
   title="KaiZenly+ vs Blockit — Zen Shield Focus Alternative for Android"
   path="/compare/"
   description="Blockit alternative for Android. KaiZenly+ Zen Shield focus adds timer-based app blocking, allowed apps, scheduled focus, bedtime mode, habits, journal, mood, and insights."
+  jsonLd={[faqSchema]}
 >
   <section class="section">
     <div class="container" style="max-width:860px">
@@ -92,6 +107,23 @@ import { positioning } from "../data/app.mjs";
             feeds a longer-term routine instead of being a one-off.
           </p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container" style="max-width:860px">
+      <div class="section-head">
+        <span class="eyebrow">Short answers</span>
+        <h2 class="display-md">Questions AI comparisons usually ask</h2>
+      </div>
+      <div class="answer-list">
+        {compareFaqs.map((item) => (
+          <article class="answer-card">
+            <h2>{item.q}</h2>
+            <p>{item.a}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>

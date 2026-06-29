@@ -4,6 +4,7 @@ import Phone from "../components/Phone.astro";
 import Shot from "../components/Shot.astro";
 import DownloadCta from "../components/DownloadCta.astro";
 import { withBase } from "../config.mjs";
+import { directAnswers } from "../data/app.mjs";
 
 const gallery = [
   { file: "42_focus_setup_light_full.webp", alt: "Focus session setup with timer, start button and allowed apps", caption: "Set a timer and start" },
@@ -13,12 +14,41 @@ const gallery = [
   { file: "39_focus_complete_celebration.webp", alt: "Focus complete celebration with confetti", caption: "A calm completion" },
   { file: "12_insights_filled_light_scroll.webp", alt: "Scheduled focus window and bedtime mode", caption: "Schedule + bedtime mode" },
 ];
+
+const zenFaqs = directAnswers.filter((f) =>
+  ["What is Zen Shield focus?", "Can I use WhatsApp during Zen Shield focus?", "How is KaiZenly+ different from a simple app blocker?"].includes(f.q)
+);
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: zenFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to start a Zen Shield focus session in KaiZenly+",
+  description:
+    "Start a timed Zen Shield focus session, choose allowed essential apps, and let KaiZenly+ block distractions until the session ends.",
+  step: [
+    { "@type": "HowToStep", name: "Choose duration", text: "Pick the Zen Shield focus session length." },
+    { "@type": "HowToStep", name: "Choose allowed apps", text: "Select up to 8 essential apps that should stay usable during focus." },
+    { "@type": "HowToStep", name: "Start Zen Shield focus", text: "Start the session and stay inside the full-screen Focus Space." },
+    { "@type": "HowToStep", name: "Let the Distraction Wall protect focus", text: "If a blocked app opens, KaiZenly+ shows the Distraction Wall and returns you to focus." },
+  ],
+};
 ---
 
 <Base
   title="Zen Shield — Android App Blocker & Focus Timer | KaiZenly+"
   path="/zen-shield/"
   description="Zen Shield is KaiZenly+'s Android focus app blocker and timer. Block distracting apps, keep 8 essential apps, schedule focus sessions, and use bedtime mode."
+  jsonLd={[faqSchema, howToSchema]}
 >
   <section class="section">
     <div class="container split">
@@ -64,6 +94,23 @@ const gallery = [
       <div class="section-head"><h2 class="display-md">In the app</h2></div>
       <div class="grid grid-3">
         {gallery.map((s) => <Shot file={s.file} alt={s.alt} caption={s.caption} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container" style="max-width:860px">
+      <div class="section-head">
+        <span class="eyebrow">Direct answers</span>
+        <h2 class="display-md">Quick Zen Shield focus answers</h2>
+      </div>
+      <div class="answer-list">
+        {zenFaqs.map((item) => (
+          <article class="answer-card">
+            <h2>{item.q}</h2>
+            <p>{item.a}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>

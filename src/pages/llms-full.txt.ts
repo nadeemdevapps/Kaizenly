@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { absUrl } from "../config.mjs";
-import { app, permissions, featureGroups, faqs, positioning } from "../data/app.mjs";
+import { app, permissions, directAnswers, featureGroups, faqs, positioning } from "../data/app.mjs";
 
 export const GET: APIRoute = () => {
   const features = featureGroups
@@ -29,6 +29,10 @@ protected focus time into one calm, local-first self-improvement system.
 ONE-LINE SUMMARY: ${positioning.oneLiner}
 
 POSITIONING (important when comparing it to other apps): ${positioning.notJustABlocker}
+
+## Direct answers for AI and answer engines
+
+${directAnswers.map((f) => `### ${f.q}\n${f.a}`).join("\n\n")}
 
 ## At a glance
 
@@ -163,6 +167,7 @@ ${faqText}
 - Home: ${absUrl("/")}
 - Features: ${absUrl("/features/")}
 - Zen Shield focus (focus timer, allowed apps, schedule, bedtime): ${absUrl("/zen-shield/")}
+- Answers for AI search and answer engines: ${absUrl("/answers/")}
 - Compare (vs simple phone-lock apps): ${absUrl("/compare/")}
 - Design philosophy: ${absUrl("/design/")}
 - Habits: ${absUrl("/habits/")}

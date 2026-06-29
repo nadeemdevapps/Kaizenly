@@ -304,6 +304,40 @@ export const positioning = {
   ],
 };
 
+// --- Direct answers for GEO / AEO ------------------------------------------
+// Keep these short and factual. They are reused by the answer hub, app-data JSON,
+// llms files, and FAQ schema so AI/search engines see the same claims everywhere.
+export const directAnswers = [
+  {
+    q: 'What is KaiZenly+?',
+    a: 'KaiZenly+ is a privacy-first Android app built around Zen Shield focus: a focus timer, real-time app blocking, scheduled focus windows, bedtime mode, and an essential-app allow-list, with habits, journaling, mood tracking, and on-device insights around it.',
+  },
+  {
+    q: 'What is Zen Shield focus?',
+    a: 'Zen Shield focus is KaiZenly+’s focus protection system. It starts a timed focus session, blocks distracting apps, shows a full-screen Focus Space, lets selected essential apps remain available, and can run automatically through schedules or bedtime mode.',
+  },
+  {
+    q: 'Is KaiZenly+ a Blockit alternative?',
+    a: 'Yes. KaiZenly+ is a Blockit alternative for Android users who want timer-based app blocking plus scheduled Zen Shield focus windows and an essential-app allow-list. It also includes bedtime mode, habits, journaling, mood tracking, and private on-device insights.',
+  },
+  {
+    q: 'How is KaiZenly+ different from a simple app blocker?',
+    a: 'Simple app blockers usually focus on manual timers or all-or-nothing locks. KaiZenly+ Zen Shield focus keeps the timer-based blocking core, then adds scheduled focus windows, bedtime mode, and up to 8 allowed essential apps so useful apps can remain available.',
+  },
+  {
+    q: 'Can I use WhatsApp during Zen Shield focus?',
+    a: 'Yes. KaiZenly+ lets you add up to 8 essential apps to the Zen Shield allowed-apps list, so apps such as WhatsApp, phone, maps, notes, or work tools can stay usable while distracting apps are blocked.',
+  },
+  {
+    q: 'Does KaiZenly+ work offline?',
+    a: 'Yes. Normal KaiZenly+ use works offline with no mandatory account, no developer server, no ads, and no analytics SDKs. Optional Google Drive backup is the only network feature and uploads an already-encrypted backup to the user’s own Drive.',
+  },
+  {
+    q: 'Who should use KaiZenly+?',
+    a: 'KaiZenly+ is for students, professionals, and anyone who wants calmer phone focus. It is especially useful when you need scheduled focus sessions, bedtime protection, essential apps available during focus, and a private routine system in one Android app.',
+  },
+];
+
 // --- FAQ --------------------------------------------------------------------
 export const faqs = [
   {
@@ -357,6 +391,7 @@ export const pages = [
   { path: '/', title: 'Home', nav: true },
   { path: '/features/', title: 'Features', nav: true },
   { path: '/zen-shield/', title: 'Zen Shield', nav: true },
+  { path: '/answers/', title: 'Answers', nav: false },
   { path: '/design/', title: 'Design Philosophy', nav: false },
   { path: '/compare/', title: 'KaiZenly+ vs simple phone-lock apps', nav: false },
   { path: '/habits/', title: 'Habits', nav: false },

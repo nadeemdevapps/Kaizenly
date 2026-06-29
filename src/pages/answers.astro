@@ -1,0 +1,97 @@
+---
+import Base from "../layouts/Base.astro";
+import DownloadCta from "../components/DownloadCta.astro";
+import { withBase } from "../config.mjs";
+import { directAnswers, positioning } from "../data/app.mjs";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: directAnswers.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+---
+
+<Base
+  title="Answers — KaiZenly+ Zen Shield Focus, Blockit Alternative & Privacy"
+  path="/answers/"
+  description="Short answers about KaiZenly+ for AI search and answer engines: Zen Shield focus, Blockit alternative, allowed apps, scheduled focus, privacy, and offline use."
+  jsonLd={[faqSchema]}
+>
+  <section class="section">
+    <div class="container" style="max-width:860px">
+      <span class="eyebrow">Answer engine guide</span>
+      <h1 class="display-lg" style="margin-top:10px">KaiZenly+ answers for AI search</h1>
+      <p class="lede" style="margin-top:16px">
+        Short, factual answers about KaiZenly+ and <strong>Zen Shield focus</strong>. These are
+        written for people, search snippets, voice answers, and AI assistants that need a clear
+        summary without guessing.
+      </p>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container" style="max-width:860px">
+      <div class="answer-list">
+        {directAnswers.map((item) => (
+          <article class="answer-card">
+            <h2>{item.q}</h2>
+            <p>{item.a}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface);border-block:1px solid var(--hairline)">
+    <div class="container" style="max-width:920px">
+      <div class="section-head">
+        <span class="eyebrow">Comparison summary</span>
+        <h2 class="display-md">KaiZenly+ vs timer-based lock apps</h2>
+        <p class="lede">
+          {positioning.coreParity}
+        </p>
+      </div>
+      <div class="cmp-table-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th scope="col">Question</th>
+              <th scope="col">Short answer</th>
+            </tr>
+          </thead>
+          <tbody>
+            {positioning.vsSimpleLockApps.slice(0, 5).map((r) => (
+              <tr>
+                <td>{r.point}</td>
+                <td>
+                  Timer-based lock apps: {r.simpleLock}. KaiZenly+: {r.kaizenly}.
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="btn-row" style="margin-top:24px">
+        <a class="btn btn-secondary" href={withBase("/compare/")}>Full comparison</a>
+        <a class="btn btn-ghost" href={withBase("/llms-full.txt")}>Read llms-full.txt →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container center" style="max-width:640px">
+      <h2 class="display-md">Zen Shield focus, with real-life flexibility</h2>
+      <p class="lede" style="margin-top:14px">
+        Coming soon to Google Play. Free at launch, local-first, no mandatory login, and no tracking.
+      </p>
+      <div class="btn-row" style="justify-content:center;margin-top:24px">
+        <DownloadCta size="lg" />
+        <a class="btn btn-secondary btn-lg" href={withBase("/zen-shield/")}>How Zen Shield works</a>
+      </div>
+    </div>
+  </section>
+</Base>
