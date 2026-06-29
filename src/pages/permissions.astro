@@ -39,14 +39,15 @@ import { allowedApps, permissions } from "../data/app.mjs";
           Before the app sends you to Android’s Accessibility or Device Admin settings, it shows the
           same clear disclosure from onboarding, Focus setup, and Profile permission health. The
           disclosure explains why the permission is needed, when it is active, what it does not
-          collect or control, and that normal habits, journal, mood, and insights still work without
-          strict Zen Shield permissions.
+          collect or control. Normal habits, journal, mood, and insights still work without Zen Shield
+          enforcement permissions, but protected Zen Shield sessions require Device Admin.
         </p>
         <p style="margin-top:10px">
           Accessibility is limited to active focus enforcement and does not read messages,
-          passwords, keystrokes, or personal screen content. Device Admin is used only for active
-          strict focus sessions to lock the device after blocked-app or bypass violations; it is not
-          used to erase data, change passwords, or control the phone outside that session.
+          passwords, keystrokes, or personal screen content. Device Admin is required for protected
+          Zen Shield sessions so KaiZenly+ can lock the device after blocked-app or bypass
+          violations and reduce uninstall-based bypass while the session is running; it is not used
+          to erase data, change passwords, or control the phone outside that session.
         </p>
       </div>
 

@@ -94,7 +94,7 @@ export const permissions = [
     name: 'Accessibility Service',
     id: 'android.permission.BIND_ACCESSIBILITY_SERVICE',
     needed: 'For focus protection',
-    why: 'Used only during active focus sessions to detect blocked apps, recents, popup, and split-screen bypass attempts, then return you to Focus Space or apply your strict focus rule. It reads package and class names for enforcement — it does not read message text, passwords, keystrokes, or personal screen content.',
+    why: 'Used only during active focus sessions to detect blocked apps, recents, popup, and split-screen bypass attempts, then return you to Focus Space or trigger the session lock rule. It reads package and class names for enforcement — it does not read message text, passwords, keystrokes, or personal screen content.',
   },
   {
     name: 'Display over other apps',
@@ -105,8 +105,8 @@ export const permissions = [
   {
     name: 'Device Admin',
     id: 'android.permission.BIND_DEVICE_ADMIN',
-    needed: 'Optional strict mode',
-    why: 'Optional for normal app use; required only for strict Zen Shield lock behavior. It can lock the device after blocked-app or bypass violations during an active strict focus session. It is never enabled by default and is explained before Android setup opens.',
+    needed: 'Required for Zen Shield sessions',
+    why: 'Required to start protected Zen Shield focus sessions. During an active session, Device Admin lets KaiZenly+ lock the device after blocked-app or bypass violations, and helps prevent uninstall-based bypass while the session is running. It is explained before Android setup opens and is not used to erase data, change passwords, or control the phone outside an active session.',
   },
   {
     name: 'Exact alarms',
@@ -179,7 +179,7 @@ export const featureGroups = [
       'A full-screen Distraction Wall that gently returns you to focus when you open a blocked app.',
       'Scheduled Zen Shield focus windows and a Bedtime mode that auto-activate on your chosen days and hours.',
       'A Parachute system of limited early-exit tokens (3 to start, +2 each month, capped at 3) to make ending Zen Shield focus a deliberate choice.',
-      'Optional strict mode (Device Admin) that throttle-locks the device after repeated bypass attempts — off by default, and emergency calls always stay available.',
+      'Device Admin protected sessions that can lock the device after blocked-app or bypass violations, while emergency calls stay available.',
       'Reliable by design: sessions survive reboots, a watchdog restarts Zen Shield if the system kills it, and incoming calls are handled gracefully.',
     ],
   },
@@ -297,7 +297,7 @@ export const positioning = {
     'A request flow inside the app lets users ask for a missing essential banking or productivity app to be reviewed.',
     'Scheduled Zen Shield focus windows and a bedtime mode that start automatically, so you do not have to begin every session by hand.',
     'A complete routine system around Zen Shield focus — habits with streaks and reminders, journaling, mood tracking, and on-device insights together.',
-    'A full-screen Focus Space with a live countdown, a Distraction Wall, a blocked-attempt counter, and an optional strict mode for deeper commitment.',
+    'A full-screen Focus Space with a live countdown, a Distraction Wall, a blocked-attempt counter, and Device Admin protection for real commitment.',
     'Privacy-first and local-first: no developer server, no mandatory account, no tracking or ads, and an encrypted on-device database — your journal and mood never leave the phone.',
     'A deliberately calm, distraction-free monochrome interface designed to reduce visual noise instead of adding to it.',
   ],

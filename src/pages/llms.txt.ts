@@ -59,7 +59,7 @@ ${directAnswers.map((f) => `- ${f.q} ${f.a}`).join("\n")}
 - Social/streaming guardrail: ${allowedApps.summary}
 - A full-screen Distraction Wall when a blocked app is opened
 - Scheduled Zen Shield focus windows and a bedtime mode that auto-start on chosen days/hours
-- Parachute early-exit tokens; optional Device Admin strict mode (off by default)
+- Parachute early-exit tokens; Device Admin protection is required for Zen Shield sessions so blocked-app or bypass violations can lock the device during an active session
 - Task and Count habits with reminders, streaks, and per-habit analytics
 - Mood-aware journaling with tags and prompt templates
 - On-device insights: mood trends, habit comparison, focus stats, and daily screen-time tracking
