@@ -95,6 +95,8 @@ export const categories = [
     blurb:
       'On-device analytics: a mood trend, a mood donut, habit comparison bars, and stat tiles.',
     shots: [
+      { file: '56_insights_real_data_light_top.webp', alt: 'Insights with real mood trend, focus stats, consistency and current streak tiles in light theme', theme: 'light' },
+      { file: '57_insights_real_data_light_scroll.webp', alt: 'Insights with mood level donut, habit comparison bars and activity heatmap in light theme', theme: 'light' },
       { file: '52_insights_filled_light_clean.webp', alt: 'Insights with a mood trend and stat tiles, five point zero average mood', theme: 'light' },
       { file: '13_insights_empty_dark.webp', alt: 'Insights with a weekly mood trend and a mood-level donut chart in light theme', theme: 'light' },
       { file: '14_insights_filled_dark.webp', alt: 'Insights with a mood-level donut chart in dark theme', theme: 'dark' },
@@ -144,8 +146,8 @@ export const excludedFiles = ['48_drive_restore_progress.webp'];
 // Hero rotation on the homepage — the strongest, most "premium" shots.
 export const heroShots = [
   { file: '42_focus_setup_light_full.webp', alt: 'KaiZenly+ Zen Shield focus setup with timer, allowed apps, and start button' },
-  { file: '53_focus_session_light_whatsapp.webp', alt: 'KaiZenly+ running Zen Shield focus session with WhatsApp allowed' },
-  { file: '54_focus_protected_wall_light.webp', alt: 'KaiZenly+ Zen Shield protected wall shown when a blocked app is opened' },
+  { file: '01_onboarding_welcome.webp', alt: 'KaiZenly+ welcome screen introducing the calm self-improvement app' },
+  { file: '56_insights_real_data_light_top.webp', alt: 'KaiZenly+ insights screen with mood trend and real focus stats' },
 ];
 
 // Flat helper: every published file (for copy + sanity checks).
