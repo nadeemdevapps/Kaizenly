@@ -35,7 +35,7 @@ export const categories = [
     id: 'habits',
     title: 'Habits',
     blurb:
-      'Daily habits with a greeting, a week strip, progress, reminders, and per-habit analytics — for Task and Count habit types.',
+      'Daily habits with a greeting, a week strip, progress, reminders, alarms, and per-habit analytics — for Task, Count, and Scale habit types.',
     shots: [
       { file: '43_habits_list_progress_light.webp', alt: 'Habits dashboard with a greeting, a calendar strip and three habits with progress bars', theme: 'light' },
       { file: '07_habits_empty_state.webp', alt: 'Empty habits screen with a sprout illustration and "No habits yet"', theme: 'dark' },

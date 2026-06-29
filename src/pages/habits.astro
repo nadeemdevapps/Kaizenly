@@ -18,7 +18,7 @@ const gallery = [
 <Base
   title="Habit Tracker — Daily Habits, Streaks & Reminders | KaiZenly+"
   path="/habits/"
-  description="KaiZenly+ habit tracker for Android: Task and Count habits with custom reminders, streaks, calendar heatmaps, per-habit analytics, and a home-screen widget. Free, private."
+  description="KaiZenly+ habit tracker for Android: Task, Count, and Scale habits with custom reminders, full-screen alarms, streaks, calendar heatmaps, analytics, and a widget."
 >
   <section class="section">
     <div class="container split split--reverse">
@@ -27,12 +27,13 @@ const gallery = [
         <h1 class="display-lg" style="margin-top:10px">Consistency, not perfection</h1>
         <p class="lede" style="margin-top:16px">
           Habits are the heart of Kaizen — small daily steps that compound. KaiZenly+ tracks them
-          calmly, with gentle reminders and clear progress, so building a routine feels achievable
-          rather than stressful.
+          calmly, with Task, Count, and Scale habit types, gentle reminders, optional full-screen
+          alarms, and clear progress, so building a routine feels achievable rather than stressful.
         </p>
         <ul class="feature-list" style="margin-top:16px">
-          <li>Two types: simple <strong>Task</strong> habits or <strong>Count</strong> goals with targets and units.</li>
-          <li>Custom reminder times, snooze, and quick notification actions (Yes / No / +1).</li>
+          <li>Three types: <strong>Task</strong> habits, <strong>Count</strong> goals, and <strong>Scale</strong> habits for 1-5 style daily ratings.</li>
+          <li>Scale habits can use shared Journal scales or custom scales created inside the habit flow.</li>
+          <li>Custom reminder times, full-screen habit alarms, snooze, and quick actions (Yes / No / +1).</li>
           <li>Streaks, best streaks, consistency %, and calendar heatmaps.</li>
           <li>Subtasks, repeat schedules, tags, and categories.</li>
         </ul>
@@ -51,6 +52,37 @@ const gallery = [
       <div class="section-head"><h2 class="display-md">From a single tap to long-term streaks</h2></div>
       <div class="grid grid-3">
         {gallery.map((s) => <Shot file={s.file} alt={s.alt} caption={s.caption} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="display-md">Task, Count, and Scale habits</h2>
+        <p class="lede">
+          KaiZenly+ does not force every routine into one format. Use Task for simple completion,
+          Count for measurable goals, and Scale for personal ratings like energy, sleep quality,
+          stress, confidence, or focus quality. Any Scale value logged for the day counts as done.
+        </p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card"><h3>Task</h3><p>Best for yes/no routines such as reading, meditation, prayer, planning, or a shutdown ritual.</p></article>
+        <article class="card"><h3>Count</h3><p>Best for numeric targets such as glasses of water, pages read, reps, or minutes practiced.</p></article>
+        <article class="card"><h3>Scale</h3><p>Best for daily ratings. Pick a shared Journal scale or create a custom scale while making the habit.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface);border-block:1px solid var(--hairline)">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="display-md">Reminders when a notification is enough. Alarms when it is not.</h2>
+        <p class="lede">
+          Reminder and Alarm are independent for each habit. A normal reminder can show quick
+          notification actions, while a full-screen alarm can ring and ask for a decision:
+          done, missed, or snooze for 30 minutes.
+        </p>
       </div>
     </div>
   </section>

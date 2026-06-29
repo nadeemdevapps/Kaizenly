@@ -10,7 +10,7 @@ export const app = {
   alternateName: 'KaiZenly Plus',
   tagline: 'Quiet the noise, reclaim your focus, and improve calmly—step by step',
   shortTagline: 'Small steps. Better days.',
-  version: '1.0.0',
+  version: '1.4.0',
   platform: 'Android',
   minAndroid: 'Android 8.0 (API 26)',
   price: 'Free',
@@ -196,8 +196,10 @@ export const featureGroups = [
     summary:
       'Turn protected Zen Shield focus time into consistent daily routines.',
     points: [
-      'Two habit types: simple Task (yes/no) or Count goals with targets and units.',
-      'Per-habit reminders with a custom time picker, plus snooze and notification actions.',
+      'Three habit types: Task habits for yes/no routines, Count habits for numeric goals, and Scale habits for daily 1-5 style ratings.',
+      'Scale habits reuse the Journal scale catalog, so you can pick an existing scale or create a custom one while creating a habit.',
+      'Per-habit reminders and full-screen habit alarms are independent: use a normal notification, a ringing alarm, both, or neither.',
+      'Full-screen habit alarms support done, missed, and 30-minute snooze actions.',
       'Streaks, best streaks, consistency %, calendar heatmaps, and per-habit analytics.',
       'Subtasks, repeat schedules (daily / weekdays / custom), tags and categories.',
       'Starter habits seeded from the goals you pick during onboarding.',
@@ -260,7 +262,7 @@ export const helpsWith = [
   },
   {
     title: 'Build better habits',
-    body: 'Track Task and Count habits with streaks, reminders, and gentle progress.',
+    body: 'Track Task, Count, and Scale habits with streaks, reminders, alarms, and gentle progress.',
   },
   {
     title: 'Reflect through journaling',
@@ -303,7 +305,7 @@ export const positioning = {
     'Only installed approved essentials appear in the picker; the allow-list is not a loophole for broad social or streaming apps.',
     'A request flow inside the app lets users ask for a missing essential banking or productivity app to be reviewed.',
     'Scheduled Zen Shield focus windows and a bedtime mode that start automatically, so you do not have to begin every session by hand.',
-    'A complete routine system around Zen Shield focus — habits with streaks and reminders, journaling, mood tracking, and on-device insights together.',
+    'A complete routine system around Zen Shield focus — Task, Count, and Scale habits with reminders, full-screen alarms, journaling, mood tracking, and on-device insights together.',
     'A full-screen Focus Space with a live countdown, a Distraction Wall, a blocked-attempt counter, and Device Admin protection for real commitment.',
     'Privacy-first and local-first: no developer server, no mandatory account, no tracking or ads, and an encrypted on-device database — your journal and mood never leave the phone.',
     'A deliberately calm, distraction-free monochrome interface designed to reduce visual noise instead of adding to it.',
@@ -318,7 +320,7 @@ export const positioning = {
     { point: 'Allowed apps', simpleLock: 'Often all-or-nothing during a lock', kaizenly: 'Flexible allow-list of up to 8 installed approved essentials, such as Phone, Messaging/SMS, WhatsApp, Gmail, Outlook, Google Keep, AI tools, and major banking/payment apps' },
     { point: 'Scheduling', simpleLock: 'Manual start, or limited schedules', kaizenly: 'Scheduled Zen Shield focus windows that auto-start on the days and times you choose' },
     { point: 'Bedtime mode', simpleLock: 'Usually not included', kaizenly: 'A dedicated bedtime mode that winds the phone down automatically at night' },
-    { point: 'Habit building', simpleLock: 'Usually not included', kaizenly: 'Full habit tracker with streaks, reminders, and progress charts' },
+    { point: 'Habit building', simpleLock: 'Usually not included', kaizenly: 'Task, Count, and Scale habits with streaks, reminders, full-screen alarms, and progress charts' },
     { point: 'Reflection', simpleLock: 'Not included', kaizenly: 'Journaling, mood check-ins, and private on-device insights' },
     { point: 'Data & privacy', simpleLock: 'May rely on accounts, cloud sync, ads, or analytics', kaizenly: 'Local-first: no account needed, no tracking or ads, encrypted on-device, with optional user-controlled encrypted backup' },
     { point: 'Interface', simpleLock: 'Varies, often busy', kaizenly: 'Calm, distraction-free, strictly monochrome editorial design' },
@@ -332,7 +334,7 @@ export const positioning = {
 export const directAnswers = [
   {
     q: 'What is KaiZenly+?',
-    a: 'KaiZenly+ is a privacy-first Android app built around Zen Shield focus: a focus timer, real-time app blocking, scheduled focus windows, bedtime mode, and an essential-app allow-list, with habits, journaling, mood tracking, and on-device insights around it.',
+    a: 'KaiZenly+ is a privacy-first Android app built around Zen Shield focus: a focus timer, real-time app blocking, scheduled focus windows, bedtime mode, and an essential-app allow-list, with Task, Count, and Scale habits, journaling, mood tracking, and on-device insights around it.',
   },
   {
     q: 'What is Zen Shield focus?',
@@ -359,6 +361,14 @@ export const directAnswers = [
     a: 'If an essential banking or productivity app is missing, KaiZenly+ includes a request flow inside the app so the user can ask for that app to be reviewed. The website does not publish every supported bank name, but major banking and payment apps across regions are covered where installed.',
   },
   {
+    q: 'What are Scale habits in KaiZenly+?',
+    a: 'Scale habits are habits you log with a daily rating instead of a yes/no check or numeric count. They are useful for energy, sleep quality, stress, confidence, focus quality, or any custom 1-5 style measure. Any logged scale value counts as done for that day.',
+  },
+  {
+    q: 'How do KaiZenly+ habit alarms work?',
+    a: 'Habit alarms are independent from normal reminder notifications. A habit can have a reminder, a full-screen alarm, both, or neither. Full-screen alarms can ring on screen and let the user mark done, mark missed, or snooze for 30 minutes.',
+  },
+  {
     q: 'Does KaiZenly+ work offline?',
     a: 'Yes. Normal KaiZenly+ use works offline with no mandatory account, no developer server, no ads, and no analytics SDKs. Optional Google Drive backup is the only network feature and uploads an already-encrypted backup to the user’s own Drive.',
   },
@@ -372,7 +382,7 @@ export const directAnswers = [
 export const faqs = [
   {
     q: 'Is KaiZenly+ free?',
-    a: 'Yes. KaiZenly+ is fully free at launch (version 1.0.0) and every feature is included. If server, backend, or AI features are added in the future, some of those may become paid — but nothing is paid today.',
+    a: `Yes. KaiZenly+ is fully free at launch (current app version ${app.version}) and every feature is included. If server, backend, or AI features are added in the future, some of those may become paid — but nothing is paid today.`,
   },
   {
     q: 'Does KaiZenly+ have a server or backend?',
@@ -404,7 +414,7 @@ export const faqs = [
   },
   {
     q: 'Is KaiZenly+ a habit tracker or an app blocker?',
-    a: 'KaiZenly+ is a Zen Shield focus app first, with habit tracking and reflection built around it. It combines timed app blocking, an essential-app allow-list, scheduled Zen Shield focus, bedtime mode, habits, journaling, mood tracking, insights, and backup into one local-first self-improvement system.',
+    a: 'KaiZenly+ is a Zen Shield focus app first, with habit tracking and reflection built around it. It combines timed app blocking, an essential-app allow-list, scheduled Zen Shield focus, bedtime mode, Task/Count/Scale habits, habit alarms, journaling, mood tracking, insights, and backup into one local-first self-improvement system.',
   },
   {
     q: 'What makes KaiZenly+ a strong Blockit alternative?',
@@ -420,6 +430,7 @@ export const faqs = [
 export const pages = [
   { path: '/', title: 'Home', nav: true },
   { path: '/features/', title: 'Features', nav: true },
+  { path: '/whats-new/', title: 'What’s new', nav: false },
   { path: '/zen-shield/', title: 'Zen Shield', nav: true },
   { path: '/answers/', title: 'Answers', nav: false },
   { path: '/design/', title: 'Design Philosophy', nav: false },

@@ -1,0 +1,136 @@
+---
+import Base from "../layouts/Base.astro";
+import DownloadCta from "../components/DownloadCta.astro";
+import { app } from "../data/app.mjs";
+
+const releaseDate = "June 29, 2026";
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is new in KaiZenly+ 1.4.0?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "KaiZenly+ 1.4.0 adds Scale habits, independent full-screen habit alarms, shared scale controls, database schema v6, and updated Zen Shield documentation for Device Admin protected sessions and the approved essential-app allow-list.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are Scale habits?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Scale habits are daily rating habits for things like energy, sleep quality, stress, confidence, or focus quality. Users can use shared Journal scales or create custom scales while making a habit. Any logged scale value counts as done for the day.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How are full-screen habit alarms different from reminders?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Normal reminders use notifications. Full-screen habit alarms can ring on screen and let the user mark a habit done, mark it missed, or snooze it for 30 minutes. Reminder and Alarm are independent for each habit.",
+      },
+    },
+  ],
+};
+---
+
+<Base
+  title="What’s New in KaiZenly+ 1.4.0 — Scale Habits & Habit Alarms"
+  path="/whats-new/"
+  softwareApp={true}
+  jsonLd={[faqSchema]}
+  description="KaiZenly+ 1.4.0 adds Scale habits, full-screen habit alarms, shared scale controls, schema v6, and updated Zen Shield allow-list and permission messaging."
+>
+  <section class="section">
+    <div class="container" style="max-width:820px">
+      <span class="eyebrow">What’s new</span>
+      <h1 class="display-lg" style="margin-top:10px">KaiZenly+ {app.version}: Scale habits and stronger habit alarms</h1>
+      <p class="lede" style="margin-top:16px">
+        Released {releaseDate}, KaiZenly+ {app.version} expands the habit system with Scale habits
+        and independent full-screen habit alarms, while keeping the same local-first privacy model
+        and calm monochrome design.
+      </p>
+      <div class="btn-row" style="margin-top:24px">
+        <DownloadCta />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface);border-block:1px solid var(--hairline)">
+    <div class="container">
+      <div class="grid grid-3">
+        <article class="card">
+          <h2 class="display-sm">Scale habits</h2>
+          <p>
+            Track daily ratings such as energy, sleep quality, stress, confidence, or focus quality.
+            Scale habits can use shared Journal scales or custom scales created inside the habit flow.
+          </p>
+        </article>
+        <article class="card">
+          <h2 class="display-sm">Full-screen alarms</h2>
+          <p>
+            Habit Alarm is now separate from Reminder. Use a normal notification, a ringing
+            full-screen alarm, both, or neither. Alarms support done, missed, and 30-minute snooze.
+          </p>
+        </article>
+        <article class="card">
+          <h2 class="display-sm">Zen Shield clarity</h2>
+          <p>
+            Website and docs now reflect the current protected-focus model: Device Admin is required
+            for protected Zen Shield sessions, and only installed approved essentials appear in the allow-list.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:860px">
+      <div class="section-head">
+        <h2 class="display-md">Detailed update summary</h2>
+        <p class="lede">
+          This release is designed for users who want a calmer routine system, not just a checklist.
+        </p>
+      </div>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Habits</h3>
+          <ul class="feature-list">
+            <li>Task habits for simple yes/no routines.</li>
+            <li>Count habits for measurable daily targets.</li>
+            <li>Scale habits for subjective daily ratings.</li>
+            <li>Shared scale catalog between Journal and Habits.</li>
+            <li>Custom scale creation inside habit setup.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Reminders and alarms</h3>
+          <ul class="feature-list">
+            <li>Normal reminders stay available for lightweight nudges.</li>
+            <li>Full-screen alarms are available for habits that need stronger attention.</li>
+            <li>Reminder and Alarm can be configured independently.</li>
+            <li>Alarm actions support done, missed, and 30-minute snooze.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Data model</h3>
+          <ul class="feature-list">
+            <li>Encrypted Room database updated to schema v6.</li>
+            <li>New habit fields support scale configuration and alarm scheduling.</li>
+            <li>No developer server, no mandatory account, no analytics, and no ads.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Zen Shield</h3>
+          <ul class="feature-list">
+            <li>Approved essentials include Phone, Messaging/SMS, WhatsApp, Gmail, Outlook, Google Keep, AI/productivity tools, and major banking/payment apps where installed.</li>
+            <li>Broad social and streaming apps are not treated as essentials.</li>
+            <li>Missing banking or productivity apps can be requested from inside the app.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+</Base>
