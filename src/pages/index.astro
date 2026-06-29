@@ -3,7 +3,7 @@ import Base from "../layouts/Base.astro";
 import Phone from "../components/Phone.astro";
 import DownloadCta from "../components/DownloadCta.astro";
 import { withBase } from "../config.mjs";
-import { app, helpsWith, trustStrip } from "../data/app.mjs";
+import { allowedApps, app, helpsWith, trustStrip } from "../data/app.mjs";
 import { heroShots } from "../data/screenshots.mjs";
 ---
 
@@ -82,13 +82,15 @@ import { heroShots } from "../data/screenshots.mjs";
         <h2 class="display-md" style="margin-top:10px">Protect your attention, not just block your phone</h2>
         <p class="lede" style="margin-top:14px">
           Zen Shield focus sessions add real friction to distracting apps while still letting
-          essential apps like WhatsApp, phone, maps, or notes through. Schedule Zen Shield focus
-          windows, add a bedtime mode, and use limited “parachute” tokens so ending focus is always
-          a deliberate choice.
+          installed approved essentials through: Phone, Messaging/SMS, WhatsApp, Gmail, Outlook,
+          Google Keep, AI/productivity tools, and major banking/payment apps where available.
+          Schedule Zen Shield focus windows, add a bedtime mode, and use limited “parachute” tokens
+          so ending focus is always a deliberate choice.
         </p>
         <ul class="feature-list">
           <li>A Zen Shield focus timer (screen timer) with a full-screen Focus Space and countdown.</li>
-          <li>An allowed-apps list — keep up to 8 essential apps usable during a session.</li>
+          <li>An allowed-apps list — keep up to 8 installed approved essentials usable during a session.</li>
+          <li>{allowedApps.request}</li>
           <li>A full-screen Distraction Wall when a blocked app is opened.</li>
           <li>Scheduled Zen Shield focus and bedtime mode that run automatically.</li>
         </ul>
@@ -98,6 +100,7 @@ import { heroShots } from "../data/screenshots.mjs";
         </div>
         <p class="note" style="margin-top:18px">
           Designed to add practical friction, protect Zen Shield focus, and keep real-life essentials available.
+          The allow-list is not a loophole for broad social or streaming apps.
         </p>
       </div>
       <div class="split-media">

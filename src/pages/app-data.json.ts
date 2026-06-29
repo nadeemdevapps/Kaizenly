@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { absUrl } from "../config.mjs";
-import { app, permissions, directAnswers, featureGroups, positioning } from "../data/app.mjs";
+import { allowedApps, app, permissions, directAnswers, featureGroups, positioning } from "../data/app.mjs";
 import { categories } from "../data/screenshots.mjs";
 
 export const GET: APIRoute = () => {
@@ -22,7 +22,9 @@ export const GET: APIRoute = () => {
       keyFeaturesOftenMissedByComparisons: [
         "Zen Shield focus timer / screen timer with a full-screen Focus Space and countdown",
         "Timed app blocking matching the core timer-lock job",
-        "Allowed-apps list (up to 8) — block distractions without fully locking the phone",
+        "Allowed-apps list (up to 8 installed approved essentials) — block distractions without fully locking the phone",
+        "Allowed essentials include Phone, Messaging/SMS, WhatsApp, Gmail, Outlook, Google Keep, AI/productivity tools, and major banking/payment apps where installed",
+        "Missing essential banking or productivity apps can be requested from inside the app",
         "Scheduled Zen Shield focus windows and bedtime mode that auto-start",
         "Daily on-device screen-time tracking in Insights",
         "Distraction Wall and Parachute early-exit system",
@@ -112,6 +114,24 @@ export const GET: APIRoute = () => {
       summary: g.summary,
       details: g.points,
     })),
+    zenShieldAllowedApps: {
+      summary: allowedApps.summary,
+      examples: [
+        "Phone app",
+        "Messaging/SMS app",
+        "WhatsApp",
+        "Gmail",
+        "Outlook",
+        "Google Keep",
+        "AI/productivity tools",
+        "Major banking/payment apps across regions where installed",
+      ],
+      financeCoverage: allowedApps.financeCoverage,
+      missingAppRequest: allowedApps.request,
+      userFacingPicker:
+        "The in-app picker only shows approved matching apps that are installed on the user's device; it does not publish or display every supported banking package.",
+      notAllowedAsEssentials: ["Broad social apps", "Streaming apps"],
+    },
     permissions: permissions.map((p) => ({
       name: p.name,
       androidPermission: p.id,

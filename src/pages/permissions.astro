@@ -2,7 +2,7 @@
 import Base from "../layouts/Base.astro";
 import DownloadCta from "../components/DownloadCta.astro";
 import { withBase } from "../config.mjs";
-import { permissions } from "../data/app.mjs";
+import { allowedApps, permissions } from "../data/app.mjs";
 ---
 
 <Base
@@ -47,6 +47,20 @@ import { permissions } from "../data/app.mjs";
           passwords, keystrokes, or personal screen content. Device Admin is used only for active
           strict focus sessions to lock the device after blocked-app or bypass violations; it is not
           used to erase data, change passwords, or control the phone outside that session.
+        </p>
+      </div>
+
+      <div class="card" style="margin-top:18px">
+        <h3 style="font-family:var(--serif);font-weight:400;font-size:1.4rem">Allowed apps during focus</h3>
+        <p style="margin-top:10px">
+          Zen Shield's allow-list is limited to installed approved essentials. Examples include the
+          Phone app, Messaging/SMS app, WhatsApp, Gmail, Outlook, Google Keep, AI/productivity tools,
+          and major banking/payment apps across regions where installed.
+        </p>
+        <p style="margin-top:10px">
+          {allowedApps.summary} {allowedApps.request} The website does not publish every supported
+          banking app name, because the in-app picker only shows the matching apps installed on that
+          user's device.
         </p>
       </div>
 

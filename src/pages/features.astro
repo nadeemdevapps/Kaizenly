@@ -3,7 +3,7 @@ import Base from "../layouts/Base.astro";
 import Phone from "../components/Phone.astro";
 import DownloadCta from "../components/DownloadCta.astro";
 import { withBase } from "../config.mjs";
-import { featureGroups } from "../data/app.mjs";
+import { allowedApps, featureGroups } from "../data/app.mjs";
 
 const media = {
   focus: { file: "42_focus_setup_light_full.webp", alt: "Focus session setup with allowed apps", link: "/zen-shield/" },
@@ -30,6 +30,11 @@ const media = {
           KaiZenly+ leads with Zen Shield focus: timed app blocking, an essential-app allow-list,
           scheduled focus windows, and bedtime mode. Habits, journaling, mood, insights, and backup
           support that protected time in one private, local-first experience.
+        </p>
+        <p class="secondary" style="margin-top:12px">
+          The allow-list keeps installed approved essentials available, including Phone,
+          Messaging/SMS, WhatsApp, Gmail, Outlook, Google Keep, AI/productivity tools, and major
+          banking/payment apps where installed. {allowedApps.request}
         </p>
       </div>
     </div>

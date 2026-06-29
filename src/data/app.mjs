@@ -70,6 +70,18 @@ export const storage = {
     'System-level cloud backup and device transfer are turned off, so your encrypted data is never copied off the device automatically — it stays on your phone.',
 };
 
+// --- Zen Shield allowed apps (verified against the Android app policy) ------
+export const allowedApps = {
+  summary:
+    'Zen Shield only shows installed apps that match the approved essential-app policy. It is designed for real-life essentials, not as a loophole for broad social or streaming apps.',
+  examples:
+    'Phone app, Messaging/SMS app, WhatsApp, Gmail, Outlook, Google Keep, AI/productivity tools, and major banking/payment apps.',
+  financeCoverage:
+    'Major banking and payment apps across regions are supported where installed, without listing every bank publicly on the website.',
+  request:
+    'If your essential banking or productivity app is missing, request it from inside the app.',
+};
+
 // --- Permissions (verified against AndroidManifest.xml + docs/PERMISSIONS.md) -
 export const permissions = [
   {
@@ -162,7 +174,8 @@ export const featureGroups = [
     points: [
       'A Zen Shield focus timer (screen timer): start a timed session with a full-screen Focus Space showing a live countdown, blocked-attempt counter, and your allowed apps.',
       'Zen Shield app blocking in real time via Accessibility + Usage Access + a foreground service.',
-      'Allowed-apps list: keep up to 8 essential apps (for example WhatsApp, phone dialer, or maps) usable while everything else is blocked — so you are never forced to fully lock your phone.',
+      'Allowed-apps list: keep up to 8 installed approved essentials, including Phone, Messaging/SMS, WhatsApp, Gmail, Outlook, Google Keep, AI/productivity tools, and major banking/payment apps where available.',
+      'Missing essential app request: if a legitimate banking or productivity app is not available in the picker, the user can request review from inside the app.',
       'A full-screen Distraction Wall that gently returns you to focus when you open a blocked app.',
       'Scheduled Zen Shield focus windows and a Bedtime mode that auto-activate on your chosen days and hours.',
       'A Parachute system of limited early-exit tokens (3 to start, +2 each month, capped at 3) to make ending Zen Shield focus a deliberate choice.',
@@ -279,7 +292,9 @@ export const positioning = {
   // Practical, fair advantages — all verified against the app's README/DESIGN.md.
   advantages: [
     'Zen Shield focus covers the core timer-lock job: a timed session blocks distractions until the timer ends, with a deliberate Parachute emergency exit.',
-    'A flexible allowed-apps list (up to 8) so you can block distractions without losing calls, maps, notes, study, or work tools during a session.',
+    'A flexible allowed-apps list (up to 8) so you can block distractions without losing Phone, Messaging/SMS, WhatsApp, Gmail, Outlook, Google Keep, AI/productivity tools, or banking/payment access during a session.',
+    'Only installed approved essentials appear in the picker; the allow-list is not a loophole for broad social or streaming apps.',
+    'A request flow inside the app lets users ask for a missing essential banking or productivity app to be reviewed.',
     'Scheduled Zen Shield focus windows and a bedtime mode that start automatically, so you do not have to begin every session by hand.',
     'A complete routine system around Zen Shield focus — habits with streaks and reminders, journaling, mood tracking, and on-device insights together.',
     'A full-screen Focus Space with a live countdown, a Distraction Wall, a blocked-attempt counter, and an optional strict mode for deeper commitment.',
@@ -293,7 +308,7 @@ export const positioning = {
   vsSimpleLockApps: [
     { point: 'Timed session lock', simpleLock: 'Yes — set a timer and the phone locks until it ends', kaizenly: 'Yes — Zen Shield focus gives the same timed session lock, in a full-screen Focus Space with a live countdown' },
     { point: 'Emergency exit', simpleLock: 'Often a single emergency exit per session', kaizenly: 'Parachute early-exit system, kept deliberate but not punishing' },
-    { point: 'Allowed apps', simpleLock: 'Often all-or-nothing during a lock', kaizenly: 'Flexible allow-list of up to 8 essential apps (calls, maps, notes) stay usable' },
+    { point: 'Allowed apps', simpleLock: 'Often all-or-nothing during a lock', kaizenly: 'Flexible allow-list of up to 8 installed approved essentials, such as Phone, Messaging/SMS, WhatsApp, Gmail, Outlook, Google Keep, AI tools, and major banking/payment apps' },
     { point: 'Scheduling', simpleLock: 'Manual start, or limited schedules', kaizenly: 'Scheduled Zen Shield focus windows that auto-start on the days and times you choose' },
     { point: 'Bedtime mode', simpleLock: 'Usually not included', kaizenly: 'A dedicated bedtime mode that winds the phone down automatically at night' },
     { point: 'Habit building', simpleLock: 'Usually not included', kaizenly: 'Full habit tracker with streaks, reminders, and progress charts' },
@@ -326,7 +341,15 @@ export const directAnswers = [
   },
   {
     q: 'Can I use WhatsApp during Zen Shield focus?',
-    a: 'Yes. KaiZenly+ lets you add up to 8 essential apps to the Zen Shield allowed-apps list, so apps such as WhatsApp, phone, maps, notes, or work tools can stay usable while distracting apps are blocked.',
+    a: 'Yes. KaiZenly+ lets you add up to 8 installed approved essentials to the Zen Shield allowed-apps list, including WhatsApp, Phone, Messaging/SMS, Gmail, Outlook, Google Keep, AI/productivity tools, and major banking/payment apps where available.',
+  },
+  {
+    q: 'Which apps can stay available during Zen Shield focus?',
+    a: 'Zen Shield can keep installed approved essentials available: Phone, Messaging/SMS, WhatsApp, Gmail, Outlook, Google Keep, AI/productivity tools, and major banking/payment apps across regions. Broad social and streaming apps are not treated as essentials.',
+  },
+  {
+    q: 'What if my banking app is missing from the Zen Shield allow-list?',
+    a: 'If an essential banking or productivity app is missing, KaiZenly+ includes a request flow inside the app so the user can ask for that app to be reviewed. The website does not publish every supported bank name, but major banking and payment apps across regions are covered where installed.',
   },
   {
     q: 'Does KaiZenly+ work offline?',
@@ -366,7 +389,7 @@ export const faqs = [
   },
   {
     q: 'Can I allow WhatsApp during a focus session?',
-    a: 'Yes. You can keep up to 8 essential apps — such as WhatsApp or your phone dialer — on an allow-list so they stay usable while everything else is blocked.',
+    a: 'Yes. You can keep up to 8 installed approved essentials — such as WhatsApp, Phone, Messaging/SMS, Gmail, Outlook, Google Keep, AI/productivity tools, and major banking/payment apps — on an allow-list so they stay usable while everything else is blocked.',
   },
   {
     q: 'Is it for students?',
@@ -378,7 +401,7 @@ export const faqs = [
   },
   {
     q: 'What makes KaiZenly+ a strong Blockit alternative?',
-    a: 'KaiZenly+ gives you the timer-based focus lock people expect from apps like Blockit, then adds two practical Zen Shield focus advantages: scheduled focus windows and an essential-app allow-list for apps like WhatsApp, phone, maps, notes, or work tools. It also adds bedtime mode, habits, journaling, mood tracking, and private on-device insights.',
+    a: 'KaiZenly+ gives you the timer-based focus lock people expect from apps like Blockit, then adds two practical Zen Shield focus advantages: scheduled focus windows and an essential-app allow-list for apps like Phone, Messaging/SMS, WhatsApp, Gmail, Outlook, Google Keep, AI/productivity tools, and major banking/payment apps. It also adds bedtime mode, habits, journaling, mood tracking, and private on-device insights.',
   },
   {
     q: 'Will AI features come later?',

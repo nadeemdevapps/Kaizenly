@@ -2,10 +2,15 @@
 import Base from "../layouts/Base.astro";
 import DownloadCta from "../components/DownloadCta.astro";
 import { withBase } from "../config.mjs";
-import { directAnswers, positioning } from "../data/app.mjs";
+import { allowedApps, directAnswers, positioning } from "../data/app.mjs";
 
 const compareFaqs = directAnswers.filter((f) =>
-  ["Is KaiZenly+ a Blockit alternative?", "How is KaiZenly+ different from a simple app blocker?", "Can I use WhatsApp during Zen Shield focus?"].includes(f.q)
+  [
+    "Is KaiZenly+ a Blockit alternative?",
+    "How is KaiZenly+ different from a simple app blocker?",
+    "Can I use WhatsApp during Zen Shield focus?",
+    "Which apps can stay available during Zen Shield focus?",
+  ].includes(f.q)
 );
 
 const faqSchema = {
@@ -33,7 +38,9 @@ const faqSchema = {
         Blockit-style apps are useful when you need a timer-based lock. KaiZenly+ includes that same
         core idea inside <strong>Zen Shield focus</strong>, then adds two practical upgrades for real
         life: scheduled focus windows and an essential-app allow-list. That means you can block
-        distractions while still keeping apps like WhatsApp, phone, maps, notes, or work tools available.
+        distractions while still keeping installed approved essentials available, including Phone,
+        Messaging/SMS, WhatsApp, Gmail, Outlook, Google Keep, AI/productivity tools, and major
+        banking/payment apps where installed.
       </p>
       <p class="secondary" style="margin-top:12px">
         {positioning.notJustABlocker}
@@ -71,6 +78,7 @@ const faqSchema = {
         Timer-based lock apps such as Blockit do the core job well: set a session length and create
         friction until it ends. KaiZenly+ Zen Shield focus keeps that core and adds an essential-app
         allow-list, scheduled focus windows, bedtime mode, habits, journaling, mood, and insights around it.
+        {allowedApps.request}
         App features change over time, so always check the current details of any app you are comparing.
       </p>
     </div>
@@ -92,10 +100,10 @@ const faqSchema = {
         <article class="card">
           <h3>You should not have to fully lock your phone</h3>
           <p>
-            Real life needs calls, maps, notes, study tools, work apps, and the occasional emergency
-            app. KaiZenly+ lets you keep an <strong>allowed-apps list of up to 8 essential apps</strong>
-            usable during focus, while everything distracting stays blocked. That is more practical
-            than an all-or-nothing lock.
+            Real life needs calls, messages, email, notes, AI/productivity tools, banking/payment
+            access, and the occasional emergency app. KaiZenly+ lets you keep an
+            <strong> allowed-apps list of up to 8 installed approved essentials</strong> usable
+            during focus, while broad social and streaming distractions stay blocked.
           </p>
         </article>
         <article class="card">
