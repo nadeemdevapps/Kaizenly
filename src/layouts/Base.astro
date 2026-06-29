@@ -75,22 +75,23 @@ const softwareSchema = {
   alternateName: ["KaiZenly Plus", "KaiZenly", "Kaizenly", "Kaizenly Plus", "kaizenly+"],
   operatingSystem: "Android 8.0+",
   applicationCategory: "ProductivityApplication",
-  applicationSubCategory: "Habit Tracker, Focus App, Journal, Mood Tracker",
+  applicationSubCategory: "Focus App, App Blocker, Habit Tracker, Journal, Mood Tracker",
   softwareVersion: app.version,
   description:
-    "KaiZenly+ is a privacy-first Android app for habit tracking, focus sessions (Zen Shield), journaling, mood tracking, routines, and on-device insights. Local-first, no account, no tracking.",
+    "KaiZenly+ is a privacy-first Android app built around Zen Shield focus sessions: app blocking, scheduled focus, allowed apps, bedtime mode, habits, journaling, mood tracking, routines, and on-device insights. Local-first, no account, no tracking.",
   url: absUrl("/"),
   downloadUrl: absUrl("/download/"),
   installUrl: absUrl("/download/"),
   privacyPolicy: absUrl("/privacy-policy/"),
   isAccessibleForFree: true,
   keywords:
-    "habit tracker, focus app, Android productivity, app blocker, app blocker for Android, Blockit alternative, Zen Shield, Zen Shield app blocker, journaling app, mood tracker, screen time, screen time control, focus timer, privacy-first, local-first, no tracking, daily routine, self-improvement, KaiZenly",
+    "Zen Shield, Zen Shield focus, focus app, Android productivity, app blocker, app blocker for Android, Blockit alternative, scheduled focus, allowed apps, focus timer, screen time control, habit tracker, journaling app, mood tracker, privacy-first, local-first, no tracking, daily routine, self-improvement, KaiZenly",
   featureList:
-    "Habit tracking with streaks and reminders, Zen Shield focus sessions with app blocking, Allowed-apps list for essential apps during focus, Scheduled focus windows and bedtime mode, Journal with mood check-ins, prompt templates, flexible past dates, and selective sharing, On-device insights with mood trends and habit stats, Local encrypted backup and optional Google Drive backup, Home-screen habit widget, No developer server, No mandatory login, No tracking or ads",
+    "Zen Shield focus sessions with app blocking, Focus timer with full-screen Focus Space, Allowed-apps list for essential apps during focus, Scheduled Zen Shield focus windows and bedtime mode, Habit tracking with streaks and reminders, Journal with mood check-ins, prompt templates, flexible past dates, and selective sharing, On-device insights with mood trends and focus stats, Local encrypted backup and optional Google Drive backup, Home-screen habit widget, No developer server, No mandatory login, No tracking or ads",
   screenshot: [
-    absUrl("/screenshots/43_habits_list_progress_light.webp"),
     absUrl("/screenshots/53_focus_session_light_whatsapp.webp"),
+    absUrl("/screenshots/42_focus_setup_light_full.webp"),
+    absUrl("/screenshots/43_habits_list_progress_light.webp"),
     absUrl("/screenshots/52_insights_filled_light_clean.webp"),
     absUrl("/screenshots/29_journal_filled_light.webp"),
   ],
@@ -127,7 +128,7 @@ const schemas = [organizationSchema, websiteSchema, ...(softwareApp ? [softwareS
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="generator" content={Astro.generator} />
     <meta name="google-site-verification" content="ejHezyBhrzbieh6OZO6HErap8Nu1Zi-b3Ov3p8z2Hko" />
-    <meta name="keywords" content="KaiZenly+, KaiZenly Plus, KaiZenly, Kaizenly, kaizenly+, app blocker, habit tracker, focus app, Android productivity, Zen Shield, Blockit alternative, journal app, mood tracker, screen time" />
+    <meta name="keywords" content="KaiZenly+, KaiZenly Plus, KaiZenly, Kaizenly, kaizenly+, Zen Shield, Zen Shield focus, focus app, app blocker, Android app blocker, Blockit alternative, scheduled focus, allowed apps, habit tracker, journal app, mood tracker, screen time" />
 
     <!-- Theme: set before paint to avoid flash -->
     <script is:inline>

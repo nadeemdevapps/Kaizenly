@@ -49,7 +49,7 @@ export const categories = [
   },
   {
     id: 'focus',
-    title: 'Zen Shield & Focus',
+    title: 'Zen Shield Focus',
     blurb:
       'Focus session setup, allowed apps, a running session, the parachute exit, the protected wall, and a calm completion.',
     shots: [
@@ -143,9 +143,9 @@ export const excludedFiles = ['48_drive_restore_progress.webp'];
 
 // Hero rotation on the homepage — the strongest, most "premium" shots.
 export const heroShots = [
-  { file: '43_habits_list_progress_light.webp', alt: 'KaiZenly+ habits dashboard with progress' },
-  { file: '52_insights_filled_light_clean.webp', alt: 'KaiZenly+ insights with a mood trend and stat tiles' },
-  { file: '01_onboarding_welcome.webp', alt: 'KaiZenly+ welcome screen with a serif headline about rest and a line illustration' },
+  { file: '42_focus_setup_light_full.webp', alt: 'KaiZenly+ Zen Shield focus setup with timer, allowed apps, and start button' },
+  { file: '53_focus_session_light_whatsapp.webp', alt: 'KaiZenly+ running Zen Shield focus session with WhatsApp allowed' },
+  { file: '54_focus_protected_wall_light.webp', alt: 'KaiZenly+ Zen Shield protected wall shown when a blocked app is opened' },
 ];
 
 // Flat helper: every published file (for copy + sanity checks).

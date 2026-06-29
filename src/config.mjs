@@ -15,7 +15,7 @@ export const SITE = {
   alternateName: 'KaiZenly Plus',
   tagline: 'Quiet the noise, reclaim your focus, and improve calmly—step by step',
   shortDescription:
-    'Privacy-first Android app for habits, focus, journaling, mood tracking, and daily routines. Local-first, no account, no tracking.',
+    'Privacy-first Android Zen Shield focus app with app blocking, scheduled focus, allowed apps, habits, journaling, mood tracking, and routines. Local-first, no tracking.',
   twitter: '', // no handle yet
   locale: 'en',
 };
