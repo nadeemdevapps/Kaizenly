@@ -197,8 +197,10 @@ export const featureGroups = [
       'Turn protected Zen Shield focus time into consistent daily routines.',
     points: [
       'Three habit types: Task habits for yes/no routines, Count habits for numeric goals, and Scale habits for daily 1-5 style ratings.',
+      'Task and Count habits can be explicitly linked with Journal activities, so a completed routine such as meditation, study, reading, water, or home meal can also appear in the same daily Journal record.',
       'Scale habits can be independent, or synced with the shared Journal scale catalog so habit ratings can also appear in daily reflection.',
-      'Synced Scale habit logs can create or update the matching Journal scale entry for that day, so the user can add mood, notes, activities, photos, or voice later.',
+      'Synced habit logs can create or update the matching Journal entry for that day, so the user can add mood, notes, activities, photos, or voice later without starting from zero.',
+      'Independent habit progress is still preserved in Journal snapshots after save or auto-log, so the timeline can show completed habits and partial Count progress such as Water 4/8.',
       'Per-habit reminders and full-screen habit alarms are independent: use a normal notification, a ringing alarm, both, or neither.',
       'Full-screen habit alarms can open a dedicated alarm screen with done, missed, stop, and 30-minute snooze actions.',
       'Streaks, best streaks, consistency %, calendar heatmaps, and per-habit analytics.',
@@ -215,6 +217,9 @@ export const featureGroups = [
       'Mood check-ins scored 1–5 with labels, flexible past dates, and a consistent 12-hour time picker.',
       'Custom Journal scales can track daily measures such as energy, sleep quality, stress, confidence, or focus quality.',
       'Journal scales and Scale habits share the same scale system, so users can reuse a scale across reflection and habit tracking.',
+      'Linked habit activities sync both ways: selecting a Journal activity can mark the linked habit done, and completing the habit can select the matching Journal activity for that day.',
+      'Linked Count habits use an exact daily total instead of duplicate taps, so editing and saving the same Journal day does not inflate progress.',
+      'Auto-created synced entries use a check-in style header instead of a neutral mood face, and the timeline separates manual activities from the Habit done snapshot.',
       'Optional photos and voice notes, stored in app-private storage.',
       'Case-insensitive full-text search and selective Markdown sharing for the entries you choose.',
     ],
@@ -265,11 +270,11 @@ export const helpsWith = [
   },
   {
     title: 'Build better habits',
-    body: 'Track Task, Count, and Scale habits with streaks, reminders, alarms, and gentle progress.',
+    body: 'Track Task, Count, and Scale habits with streaks, reminders, alarms, gentle progress, and optional Journal sync.',
   },
   {
     title: 'Reflect through journaling',
-    body: 'Write honest entries with mood, flexible activities, custom emojis, prompt templates, and daily scales.',
+    body: 'Write honest entries with mood, flexible activities, habit snapshots, custom emojis, prompt templates, and daily scales.',
   },
   {
     title: 'Understand yourself',
@@ -309,6 +314,7 @@ export const positioning = {
     'A request flow inside the app lets users ask for a missing essential banking or productivity app to be reviewed.',
     'Scheduled Zen Shield focus windows and a bedtime mode that start automatically, so you do not have to begin every session by hand.',
     'A complete routine system around Zen Shield focus — Task, Count, and Scale habits with reminders, full-screen alarms, flexible journaling, mood tracking, and on-device insights together.',
+    'A unified Journal + Habit record: linked habits sync with Journal activities, Scale habits sync with Journal scales, and independent habit progress can appear in the daily Journal timeline.',
     'A full-screen Focus Space with a live countdown, a Distraction Wall, a blocked-attempt counter, and Device Admin protection for real commitment.',
     'Privacy-first and local-first: no developer server, no mandatory account, no tracking or ads, and an encrypted on-device database — your journal and mood never leave the phone.',
     'A deliberately calm, distraction-free monochrome interface designed to reduce visual noise instead of adding to it.',
@@ -368,12 +374,16 @@ export const directAnswers = [
     a: 'Scale habits are habits you log with a daily rating instead of a yes/no check or numeric count. They are useful for energy, sleep quality, stress, confidence, focus quality, or any custom 1-5 style measure. A Scale habit can be independent, or it can sync with a Journal scale so the same daily rating is available in reflection. Any logged scale value counts as done for that day.',
   },
   {
+    q: 'How do habits and Journal sync in KaiZenly+?',
+    a: 'KaiZenly+ can keep habits and Journal connected through an explicit link. A linked Task habit can select the matching Journal activity for the same day, a linked Count habit can save an exact daily total, and a linked Scale habit can update the matching Journal scale. Independent habit progress is not shown in the composer, but it can still be saved into the daily Journal snapshot for timeline context.',
+  },
+  {
     q: 'How do KaiZenly+ habit alarms work?',
     a: 'Habit alarms are independent from normal reminder notifications. A habit can have a reminder, a full-screen alarm, both, or neither. Full-screen alarms can ring on a dedicated alarm screen and let the user mark done, mark missed, stop the alarm, or snooze for 30 minutes.',
   },
   {
     q: 'What changed in the KaiZenly+ Journal?',
-    a: 'The Journal now supports flexible activities/categories instead of only fixed items, custom emoji items, custom daily scales, and sync with Scale habits. A synced Scale habit log can create or update that day’s Journal scale value, then the user can edit the same day later to add mood, notes, tags, activities, photos, or voice.',
+    a: 'The Journal now supports flexible activities/categories instead of only fixed items, custom emoji items, custom daily scales, habit-linked activities, linked Count controls, habit snapshots, and sync with Scale habits. A synced habit log can create or update that day’s Journal entry, then the user can edit the same day later to add mood, notes, tags, activities, photos, or voice.',
   },
   {
     q: 'Does KaiZenly+ work offline?',

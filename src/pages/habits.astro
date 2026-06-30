@@ -18,7 +18,7 @@ const gallery = [
 <Base
   title="Habit Tracker — Daily Habits, Streaks & Reminders | KaiZenly+"
   path="/habits/"
-  description="KaiZenly+ habit tracker for Android: Task, Count, and Scale habits with custom reminders, full-screen alarms, streaks, calendar heatmaps, analytics, and a widget."
+  description="KaiZenly+ habit tracker for Android: Task, Count, and Scale habits with inline progress, Journal sync, custom reminders, full-screen alarms, streaks, analytics, and a widget."
 >
   <section class="section">
     <div class="container split split--reverse">
@@ -27,12 +27,16 @@ const gallery = [
         <h1 class="display-lg" style="margin-top:10px">Consistency, not perfection</h1>
         <p class="lede" style="margin-top:16px">
           Habits are the heart of Kaizen — small daily steps that compound. KaiZenly+ tracks them
-          calmly, with Task, Count, and Scale habit types, gentle reminders, optional full-screen
-          alarms, and clear progress, so building a routine feels achievable rather than stressful.
+          calmly, with <strong>Task</strong>, <strong>Count</strong>, and <strong>Scale</strong>
+          habit types, inline progress, gentle reminders, optional full-screen alarms, and
+          <strong>Journal sync</strong>, so building a routine feels achievable rather than stressful.
         </p>
         <ul class="feature-list" style="margin-top:16px">
           <li>Three types: <strong>Task</strong> habits, <strong>Count</strong> goals, and <strong>Scale</strong> habits for 1-5 style daily ratings.</li>
+          <li><strong>Inline logging</strong> lets Scale and Count habits update directly from the habit board.</li>
+          <li><strong>Journal link</strong> connects Task and Count habits to matching Journal activities without silent auto-linking.</li>
           <li>Scale habits can be independent, or synced with Journal scales so ratings also appear in daily reflection.</li>
+          <li>Independent habit progress can still appear in the daily Journal timeline as a stable <strong>Habit done</strong> snapshot.</li>
           <li>Custom reminder times, full-screen habit alarms, stop, snooze, done, missed, and quick notification actions.</li>
           <li>Streaks, best streaks, consistency %, and calendar heatmaps.</li>
           <li>Subtasks, repeat schedules, tags, and categories.</li>
@@ -64,14 +68,42 @@ const gallery = [
           KaiZenly+ does not force every routine into one format. Use Task for simple completion,
           Count for measurable goals, and Scale for personal ratings like energy, sleep quality,
           stress, confidence, or focus quality. Any Scale value logged for the day counts as done.
-          A Scale habit can stay independent, or sync with a Journal scale so your habit log becomes
-          part of the same day’s reflection.
+          A Scale habit can stay independent, or sync with a Journal scale. Task and Count habits
+          can also be explicitly linked with Journal activities, so your habit log becomes part of
+          the same day’s reflection.
         </p>
       </div>
       <div class="grid grid-3">
-        <article class="card"><h3>Task</h3><p>Best for yes/no routines such as reading, meditation, prayer, planning, or a shutdown ritual.</p></article>
-        <article class="card"><h3>Count</h3><p>Best for numeric targets such as glasses of water, pages read, reps, or minutes practiced.</p></article>
+        <article class="card"><h3>Task</h3><p>Best for yes/no routines such as reading, meditation, prayer, planning, or a shutdown ritual. Link it to a Journal activity when the same item should appear in reflection.</p></article>
+        <article class="card"><h3>Count</h3><p>Best for numeric targets such as glasses of water, pages read, reps, or minutes practiced. Linked Count habits use an exact daily total, so repeated saves do not duplicate progress.</p></article>
         <article class="card"><h3>Scale</h3><p>Best for daily ratings. Keep it independent or sync it with Journal so the same value appears in reflection.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface);border-block:1px solid var(--hairline)">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="display-md">Habits and Journal can finally share the same day</h2>
+        <p class="lede">
+          Many trackers keep habits and journals separate. KaiZenly+ connects them deliberately:
+          linked habits update Journal, Journal can update linked habits, and independent progress
+          is saved into the timeline after the daily entry is saved or auto-created.
+        </p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Explicit Journal link</h3>
+          <p>Choose an existing Journal activity, or create one from the habit setup. Similar names can guide you, but KaiZenly+ does not silently link habits by name.</p>
+        </article>
+        <article class="card">
+          <h3>Exact count sync</h3>
+          <p>Linked Count habits save the daily total, not an extra tap. That keeps edit, save, and re-save flows duplicate-safe.</p>
+        </article>
+        <article class="card">
+          <h3>Daily snapshots</h3>
+          <p>Completed independent habits and partial Count progress can appear in the Journal timeline as <strong>Habit done</strong> chips, while missed habits stay hidden.</p>
+        </article>
       </div>
     </div>
   </section>

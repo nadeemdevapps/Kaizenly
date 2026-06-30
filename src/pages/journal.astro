@@ -15,7 +15,7 @@ const gallery = [
 <Base
   title="Journal & Mood Tracker | Private, On-Device"
   path="/journal/"
-  description="Mood-aware journaling in KaiZenly+: flexible activities, custom emoji items, custom scales, synced Scale habits, tags, templates, selective sharing, photos, voice notes, and private on-device storage."
+  description="Mood-aware journaling in KaiZenly+: unified daily records with activities, linked habits, habit snapshots, custom scales, tags, templates, photos, voice notes, and private on-device storage."
 >
   <section class="section">
     <div class="container split">
@@ -24,14 +24,16 @@ const gallery = [
         <h1 class="display-lg" style="margin-top:10px">A private space to reflect</h1>
         <p class="lede" style="margin-top:16px">
           Write an honest line or a long entry. Add a mood check-in, tags, flexible activities,
-          custom emoji items, daily scales, or a gentle prompt template. Everything stays on your
-          device — journals are personal, and KaiZenly+ treats them that way.
+          custom emoji items, daily scales, linked habits, or a gentle prompt template. Everything
+          stays on your device — journals are personal, and KaiZenly+ treats them that way.
         </p>
         <ul class="feature-list" style="margin-top:16px">
           <li>Mood check-ins scored 1–5 with labels, flexible past dates, and a 12-hour time picker.</li>
           <li>Flexible activities/categories and custom emoji items instead of only fixed lists.</li>
           <li>Custom Journal scales for energy, sleep quality, stress, confidence, focus quality, or your own rating.</li>
-          <li>Scale habits can sync into Journal scales, so one rating can support both habit progress and daily reflection.</li>
+          <li><strong>Scale habits</strong> can sync into Journal scales, so one rating can support both habit progress and daily reflection.</li>
+          <li><strong>Linked Task and Count habits</strong> can sync with Journal activities, including exact Count totals.</li>
+          <li><strong>Habit done</strong> snapshots preserve completed habits and partial progress in the daily timeline.</li>
           <li>Optional photos and voice notes, stored in app-private storage.</li>
           <li>Full-text search and selective sharing, so you can export one entry, one day, or a chosen set.</li>
         </ul>
@@ -62,7 +64,8 @@ const gallery = [
         <p class="lede">
           Journal is no longer limited to a fixed set of reflection items. You can shape it around
           your own words: custom activities, categories, emoji items, and daily scales that match how
-          you actually track your day.
+          you actually track your day. When a habit belongs in that reflection, link it explicitly
+          so the same daily action does not have to be managed twice.
         </p>
       </div>
       <div class="grid grid-3">
@@ -76,7 +79,34 @@ const gallery = [
         </article>
         <article class="card">
           <h3>Habit sync</h3>
-          <p>A synced Scale habit can add today’s rating to Journal, then you can edit the entry later with full context.</p>
+          <p>A synced habit can add today’s activity, count, or scale value to Journal, then you can edit the entry later with full context.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface);border-block:1px solid var(--hairline)">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="display-md">A unified daily record</h2>
+        <p class="lede">
+          The Journal timeline is designed to become the daily record of what happened: mood, notes,
+          activities, scales, linked habits, and independent habit progress. Manual entry stays calm,
+          but the saved timeline keeps the full context.
+        </p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Linked activities</h3>
+          <p>Selecting a linked Journal activity can mark the matching habit done, and completing the habit can select the same activity for that date.</p>
+        </article>
+        <article class="card">
+          <h3>Count control</h3>
+          <p>Linked Count activities open a compact count sheet with plus, minus, reset, and done, then save the exact total for the day.</p>
+        </article>
+        <article class="card">
+          <h3>Check-in entries</h3>
+          <p>Auto-created sync entries use a check-in style calendar header instead of showing a neutral mood face.</p>
         </article>
       </div>
     </div>
