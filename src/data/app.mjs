@@ -197,9 +197,10 @@ export const featureGroups = [
       'Turn protected Zen Shield focus time into consistent daily routines.',
     points: [
       'Three habit types: Task habits for yes/no routines, Count habits for numeric goals, and Scale habits for daily 1-5 style ratings.',
-      'Scale habits reuse the Journal scale catalog, so you can pick an existing scale or create a custom one while creating a habit.',
+      'Scale habits can be independent, or synced with the shared Journal scale catalog so habit ratings can also appear in daily reflection.',
+      'Synced Scale habit logs can create or update the matching Journal scale entry for that day, so the user can add mood, notes, activities, photos, or voice later.',
       'Per-habit reminders and full-screen habit alarms are independent: use a normal notification, a ringing alarm, both, or neither.',
-      'Full-screen habit alarms support done, missed, and 30-minute snooze actions.',
+      'Full-screen habit alarms can open a dedicated alarm screen with done, missed, stop, and 30-minute snooze actions.',
       'Streaks, best streaks, consistency %, calendar heatmaps, and per-habit analytics.',
       'Subtasks, repeat schedules (daily / weekdays / custom), tags and categories.',
       'Starter habits seeded from the goals you pick during onboarding.',
@@ -210,8 +211,10 @@ export const featureGroups = [
     title: 'Journal & Mood',
     summary: 'Reflect on your day with rich entries and integrated mood check-ins.',
     points: [
-      'Journal entries with title, body, tags, activities, and prompt templates.',
+      'Journal entries with title, body, tags, flexible activities/categories, custom emoji items, and prompt templates.',
       'Mood check-ins scored 1–5 with labels, flexible past dates, and a consistent 12-hour time picker.',
+      'Custom Journal scales can track daily measures such as energy, sleep quality, stress, confidence, or focus quality.',
+      'Journal scales and Scale habits share the same scale system, so users can reuse a scale across reflection and habit tracking.',
       'Optional photos and voice notes, stored in app-private storage.',
       'Case-insensitive full-text search and selective Markdown sharing for the entries you choose.',
     ],
@@ -266,7 +269,7 @@ export const helpsWith = [
   },
   {
     title: 'Reflect through journaling',
-    body: 'Write honest entries with mood check-ins, tags, and prompt templates.',
+    body: 'Write honest entries with mood, flexible activities, custom emojis, prompt templates, and daily scales.',
   },
   {
     title: 'Understand yourself',
@@ -305,7 +308,7 @@ export const positioning = {
     'Only installed approved essentials appear in the picker; the allow-list is not a loophole for broad social or streaming apps.',
     'A request flow inside the app lets users ask for a missing essential banking or productivity app to be reviewed.',
     'Scheduled Zen Shield focus windows and a bedtime mode that start automatically, so you do not have to begin every session by hand.',
-    'A complete routine system around Zen Shield focus — Task, Count, and Scale habits with reminders, full-screen alarms, journaling, mood tracking, and on-device insights together.',
+    'A complete routine system around Zen Shield focus — Task, Count, and Scale habits with reminders, full-screen alarms, flexible journaling, mood tracking, and on-device insights together.',
     'A full-screen Focus Space with a live countdown, a Distraction Wall, a blocked-attempt counter, and Device Admin protection for real commitment.',
     'Privacy-first and local-first: no developer server, no mandatory account, no tracking or ads, and an encrypted on-device database — your journal and mood never leave the phone.',
     'A deliberately calm, distraction-free monochrome interface designed to reduce visual noise instead of adding to it.',
@@ -362,11 +365,15 @@ export const directAnswers = [
   },
   {
     q: 'What are Scale habits in KaiZenly+?',
-    a: 'Scale habits are habits you log with a daily rating instead of a yes/no check or numeric count. They are useful for energy, sleep quality, stress, confidence, focus quality, or any custom 1-5 style measure. Any logged scale value counts as done for that day.',
+    a: 'Scale habits are habits you log with a daily rating instead of a yes/no check or numeric count. They are useful for energy, sleep quality, stress, confidence, focus quality, or any custom 1-5 style measure. A Scale habit can be independent, or it can sync with a Journal scale so the same daily rating is available in reflection. Any logged scale value counts as done for that day.',
   },
   {
     q: 'How do KaiZenly+ habit alarms work?',
-    a: 'Habit alarms are independent from normal reminder notifications. A habit can have a reminder, a full-screen alarm, both, or neither. Full-screen alarms can ring on screen and let the user mark done, mark missed, or snooze for 30 minutes.',
+    a: 'Habit alarms are independent from normal reminder notifications. A habit can have a reminder, a full-screen alarm, both, or neither. Full-screen alarms can ring on a dedicated alarm screen and let the user mark done, mark missed, stop the alarm, or snooze for 30 minutes.',
+  },
+  {
+    q: 'What changed in the KaiZenly+ Journal?',
+    a: 'The Journal now supports flexible activities/categories instead of only fixed items, custom emoji items, custom daily scales, and sync with Scale habits. A synced Scale habit log can create or update that day’s Journal scale value, then the user can edit the same day later to add mood, notes, tags, activities, photos, or voice.',
   },
   {
     q: 'Does KaiZenly+ work offline?',
@@ -414,7 +421,7 @@ export const faqs = [
   },
   {
     q: 'Is KaiZenly+ a habit tracker or an app blocker?',
-    a: 'KaiZenly+ is a Zen Shield focus app first, with habit tracking and reflection built around it. It combines timed app blocking, an essential-app allow-list, scheduled Zen Shield focus, bedtime mode, Task/Count/Scale habits, habit alarms, journaling, mood tracking, insights, and backup into one local-first self-improvement system.',
+    a: 'KaiZenly+ is a Zen Shield focus app first, with habit tracking and reflection built around it. It combines timed app blocking, an essential-app allow-list, scheduled Zen Shield focus, bedtime mode, Task/Count/Scale habits, habit alarms, flexible journaling, mood tracking, insights, and backup into one local-first self-improvement system.',
   },
   {
     q: 'What makes KaiZenly+ a strong Blockit alternative?',
@@ -430,7 +437,7 @@ export const faqs = [
 export const pages = [
   { path: '/', title: 'Home', nav: true },
   { path: '/features/', title: 'Features', nav: true },
-  { path: '/whats-new/', title: 'What’s new', nav: false },
+  { path: '/whats-new/', title: 'What’s new', nav: true },
   { path: '/zen-shield/', title: 'Zen Shield', nav: true },
   { path: '/answers/', title: 'Answers', nav: false },
   { path: '/design/', title: 'Design Philosophy', nav: false },

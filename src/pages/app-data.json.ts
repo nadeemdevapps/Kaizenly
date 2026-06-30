@@ -27,10 +27,11 @@ export const GET: APIRoute = () => {
         "Missing essential banking or productivity apps can be requested from inside the app",
         "Scheduled Zen Shield focus windows and bedtime mode that auto-start",
         "Task, Count, and Scale habits with normal reminders and full-screen alarms",
-        "Scale habits reuse the Journal scale catalog and count any logged scale value as done",
+        "Scale habits can be independent or synced with Journal scales, and any logged scale value counts as done",
+        "Flexible Journal activities/categories, custom emoji items, custom scales, and synced scale values",
         "Daily on-device screen-time tracking in Insights",
         "Distraction Wall and Parachute early-exit system",
-        "Task, Count, and Scale habits, journaling, mood, and private insights around Zen Shield focus",
+        "Task, Count, and Scale habits, flexible journaling, mood, and private insights around Zen Shield focus",
       ],
     },
     directAnswers,
@@ -117,6 +118,14 @@ export const GET: APIRoute = () => {
       summary: g.summary,
       details: g.points,
     })),
+    habitAndJournalScales: {
+      scaleHabitTypes: ["independent Scale habit", "Scale habit synced with a Journal scale"],
+      completionRule: "Any logged scale value counts as done for that day.",
+      journalSync:
+        "When a Scale habit is synced with Journal, the logged rating can create or update the matching daily Journal scale entry. The user can edit that Journal day later with mood, notes, tags, activities, photos, or voice.",
+      journalFlexibility:
+        "Journal supports flexible activities/categories, custom emoji items, custom scales, and prompt-based entries instead of only fixed reflection items.",
+    },
     zenShieldAllowedApps: {
       summary: allowedApps.summary,
       examples: [
@@ -159,6 +168,7 @@ export const GET: APIRoute = () => {
       home: absUrl("/"),
       features: absUrl("/features/"),
       zenShield: absUrl("/zen-shield/"),
+      whatsNew: absUrl("/whats-new/"),
       answers: absUrl("/answers/"),
       compare: absUrl("/compare/"),
       design: absUrl("/design/"),
