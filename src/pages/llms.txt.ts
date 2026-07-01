@@ -64,16 +64,22 @@ ${directAnswers.map((f) => `- ${f.q} ${f.a}`).join("\n")}
 - Permission grant model: ${permissionGrantModel.summary}
 - A full-screen Distraction Wall when a blocked app is opened
 - Scheduled Zen Shield focus windows and a bedtime mode that auto-start on chosen days/hours
+- During an active Zen Shield session, KaiZenly+ itself can still be used for Habits, Journal,
+  Insights, and Profile, while the Focus tab is dimmed and session controls stay on the focus wall
 - Parachute early-exit tokens; Device Admin protection is required for Zen Shield sessions so blocked-app or bypass violations can lock the device during an active session
-- Task, Count, and Scale habits with inline logging, reminders, full-screen alarms, streaks, and per-habit analytics
+- Task, Count, and Scale habits with inline logging, compact Scale sliders, reminders, full-screen alarms, streaks, and per-habit analytics
 - Task and Count habits can be explicitly linked with Journal activities; no silent name auto-linking is required
+- Linked Count habits can display exact Journal activity chips such as Water 7/10 or Water 10/10
 - Scale habits can be independent or synced with Journal scales; any logged scale value counts as done for that day
+- Habit detail insights show Journal link status and type-specific context for Task, Count, and Scale habits
 - Mood-aware journaling with flexible activities/categories, custom emoji items, custom scales, linked habit activities, tags, and prompt templates
 - Unified Journal + Habit sync: linked habit logs can update the daily Journal entry, Journal selections can update linked habits, and independent habit progress can appear later as Habit done snapshots
 - Unified daily record: mood, notes, activities, linked habits, exact Count totals, Scale ratings, and independent habit snapshots can live together in one Journal timeline
 - Auto-created synced Journal entries use a check-in/calendar style header instead of showing a neutral mood face
 - On-device insights: mood trends, habit comparison, focus stats, and daily screen-time tracking
 - Local encrypted backup and optional Google Drive backup/restore
+- Optional scheduled Google Drive backup: Off, Hourly, Daily, Weekly, or Monthly after setup,
+  with Wi-Fi-only as the default and offline-aware delayed execution when network access returns
 - Home-screen habit widget
 - Calm, distraction-free, strictly monochrome interface (dark + light)
 

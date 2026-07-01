@@ -53,7 +53,7 @@ const howToSchema = {
 <Base
   title="Zen Shield — Android App Blocker & Focus Timer | KaiZenly+"
   path="/zen-shield/"
-  description="Zen Shield is KaiZenly+'s Android focus app blocker and timer. Block distracting apps, keep 8 essential apps, schedule focus sessions, and use bedtime mode."
+  description="Zen Shield is KaiZenly+'s Android focus app blocker and timer. Block distractions, keep essential apps, schedule focus, and still log habits or Journal during a session."
   jsonLd={[faqSchema, howToSchema]}
 >
   <section class="section">
@@ -66,7 +66,9 @@ const howToSchema = {
           Start a timed Zen Shield focus session and distracting apps are blocked, while essential
           apps like Phone, Messaging/SMS, WhatsApp, Gmail, Outlook, Google Keep, AI/productivity
           tools, and major banking/payment apps can stay available where installed. You can also
-          schedule focus windows and bedtime mode so protection starts automatically.
+          schedule focus windows and bedtime mode so protection starts automatically. During an
+          active session, KaiZenly+ itself can still be used for Habits and Journal, while the Focus
+          tab stays dimmed so the session controls remain on the focus wall.
         </p>
         <div class="btn-row" style="margin-top:24px">
           <DownloadCta />
@@ -87,6 +89,7 @@ const howToSchema = {
       </div>
       <div class="grid grid-3">
         <article class="card"><h3>Zen Shield focus timer</h3><p>Pick a duration and start a full-screen Focus Space with a live countdown and a blocked-attempt counter. Works like a screen time lock.</p></article>
+        <article class="card"><h3>Use KaiZenly+ during focus</h3><p>A focus session should protect attention without blocking the routine app itself. Habits, Journal, Insights, and Profile can stay usable during an active session, while the Focus tab is dimmed and session controls stay on the focus wall.</p></article>
         <article class="card"><h3>Allowed apps list</h3><p>Keep up to 8 installed approved essentials usable while everything else is blocked: Phone, Messaging/SMS, WhatsApp, Gmail, Outlook, Google Keep, AI/productivity tools, and major banking/payment apps.</p></article>
         <article class="card"><h3>Request a missing essential</h3><p>{allowedApps.request} Major banking and payment apps across regions are supported where installed, without turning the allow-list into a social or streaming loophole.</p></article>
         <article class="card"><h3>The Distraction Wall</h3><p>Open a blocked app and a full-screen wall returns you to Zen Shield focus, adding friction at the exact moment distraction starts.</p></article>
@@ -132,7 +135,9 @@ const howToSchema = {
           Device Admin protection is required for Zen Shield sessions so the app can lock the device
           after blocked-app or bypass violations and reduce uninstall-based bypass during an active
           session. Emergency calls stay available, and approved essentials can remain on your allow-list.
-          {allowedApps.summary} {allowedApps.request}
+          KaiZenly+ also treats its own habit and Journal experience differently from distracting apps:
+          you can record what you did, write a note, or check your progress without ending the active
+          focus protection. {allowedApps.summary} {allowedApps.request}
         </p>
       </div>
     </div>

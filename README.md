@@ -246,6 +246,8 @@ The website now contains full marketing copy for unified Journal + Habit sync. S
 | Synced daily timeline | `/journal/`, `/screenshots/` | A saved Daily log with a linked Journal activity chip and a separate `Habit done` section | `61_journal_synced_timeline.webp` | `Journal daily log showing a synced activity and a separate Habit done section` |
 | Linked Count control | `/journal/`, `/blog/unified-daily-records/` if screenshots are added there later | Journal composer with a linked Count habit sheet open, showing plus, minus, reset, and done controls | `62_journal_linked_count_control.webp` | `Journal linked Count control showing exact daily progress controls` |
 | Synced Scale rating | `/journal/`, `/habits/`, `/screenshots/` | A Scale habit value reflected inside the Journal scale section or saved daily record | `63_journal_synced_scale_rating.webp` | `Journal scale section showing a synced Scale habit rating` |
+| Focus session app access | `/zen-shield/`, `/screenshots/`, optionally `/whats-new/` | Active focus session where KaiZenly+ Habits or Journal is usable and the Focus tab is dimmed | `64_focus_session_app_access.webp` | `KaiZenly Plus usable during an active Zen Shield session with Focus tab dimmed` |
+| Scheduled Drive backup page | `/backup/`, `/screenshots/`, optionally `/whats-new/` | Auto-backup full-screen page showing Off, Hourly, Daily, Weekly, Monthly and Wi-Fi-only setting | `65_scheduled_drive_backup.webp` | `Scheduled Google Drive backup settings with frequency and Wi-Fi only options` |
 
 ### Replacement workflow
 
@@ -253,7 +255,9 @@ The website now contains full marketing copy for unified Journal + Habit sync. S
 2. Add the real dimensions to `src/data/screenshot-dims.json`.
 3. Add the screenshot to the right category in `src/data/screenshots.mjs`.
 4. Replace the placeholder card in `src/pages/journal.astro` with `Shot` or `Phone` once the screenshot is ready.
-5. Run `npm run build`; then run `node scripts/check-links.mjs` if the build succeeds.
+5. For focus-session access screenshots, add the image to the Zen Shield gallery in `src/pages/zen-shield.astro`.
+6. For scheduled Drive backup screenshots, add the image to the Backup gallery in `src/pages/backup.astro`.
+7. Run `npm run build`; then run `node scripts/check-links.mjs` if the build succeeds.
 
 ### Current new screenshots already added
 

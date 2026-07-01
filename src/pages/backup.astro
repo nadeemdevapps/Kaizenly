@@ -17,7 +17,7 @@ const gallery = [
 <Base
   title="Encrypted Backup & Restore"
   path="/backup/"
-  description="KaiZenly+ backups are encrypted and user-controlled: a local backup with a password only you know, plus optional Google Drive backup to your own hidden Drive folder."
+  description="KaiZenly+ backups are encrypted and user-controlled: local backup, manual Google Drive backup, and optional scheduled Drive backup to your own hidden Drive folder."
 >
   <section class="section">
     <div class="container split">
@@ -26,12 +26,14 @@ const gallery = [
         <h1 class="display-lg" style="margin-top:10px">Backups you control, encrypted by you</h1>
         <p class="lede" style="margin-top:16px">
           Because there’s no developer server, your data only leaves the device when you decide to
-          back it up. Both options are encrypted and stay under your control.
+          back it up. Local backup, manual Drive backup, and scheduled Drive backup are encrypted
+          and stay under your control.
         </p>
         <ul class="feature-list" style="margin-top:16px">
           <li><strong>Local backup</strong> — Data Only, or Full Backup including journal media.</li>
           <li><strong>Encrypted</strong> and locked with a password only you know.</li>
           <li><strong>Optional Google Drive backup</strong> to your own hidden Drive app folder.</li>
+          <li><strong>Scheduled backup</strong> — Off, Hourly, Daily, Weekly, or Monthly, with Wi-Fi-only as the privacy-friendly default.</li>
           <li>Restore previews the backup’s contents before replacing local data.</li>
         </ul>
         <div class="btn-row" style="margin-top:24px">
@@ -59,6 +61,22 @@ const gallery = [
             You link your own Google account and the app uploads one already-encrypted file to a
             hidden Drive app folder (appDataFolder) that only KaiZenly+ can see. Backups go to your
             Drive, never to the developer. This flow is opt-in and still in testing.
+          </p>
+        </article>
+        <article class="card">
+          <h3 style="font-family:var(--serif);font-weight:400;font-size:1.4rem">Automatic on your schedule</h3>
+          <p style="margin-top:10px">
+            Once Drive backup is set up, KaiZenly+ can run encrypted backups automatically on the
+            cadence you choose: hourly, daily, weekly, or monthly. Daily, weekly, and monthly backups
+            can be aligned to a time of day, and larger backups can stay Wi-Fi-only by default.
+          </p>
+        </article>
+        <article class="card">
+          <h3 style="font-family:var(--serif);font-weight:400;font-size:1.4rem">Offline-aware by design</h3>
+          <p style="margin-top:10px">
+            If the phone is offline or the selected network condition is not available at the backup
+            time, the app can wait and run when the connection returns. The backup is still the same
+            encrypted file, stored in the user’s Drive instead of a developer server.
           </p>
         </article>
       </div>

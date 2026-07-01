@@ -29,7 +29,7 @@ export const posts = [
       {
         h: 'What KaiZenly+ does differently',
         p: [
-          'KaiZenly+ lets a habit be independent or explicitly linked to Journal. When the link exists, the same real-world action can be reflected in both places. A Task habit can become a Journal activity. A Count habit can preserve an exact daily total. A Scale habit can share a rating with a Journal scale.',
+          'KaiZenly+ lets a habit be independent or explicitly linked to Journal. When the link exists, the same real-world action can be reflected in both places. A Task habit can become a Journal activity. A Count habit can preserve and display an exact daily total such as Water 7/10. A Scale habit can share a rating with a Journal scale.',
           'This is not silent name matching. The user chooses the relationship, so “meditation” only syncs with Journal when the user decides it should. That makes the system predictable and avoids surprising data changes.',
         ],
       },
@@ -93,14 +93,14 @@ export const posts = [
         h: 'Linked Count habits',
         p: [
           'Count habits need more care because the value matters. A linked Count habit should not add another count every time the user edits and saves a Journal entry. KaiZenly+ uses exact daily totals for this reason.',
-          'That means a value like Water 4/8 represents the daily total, not four accidental saves. It is cleaner for progress, cleaner for editing, and clearer in the timeline.',
+          'That means a value like Water 4/8 or Water 7/10 represents the daily total, not four accidental saves. It is cleaner for progress, cleaner for editing, and clearer in the timeline because the Journal chip can show the actual progress instead of only the raw activity name.',
         ],
       },
       {
         h: 'Linked Scale habits',
         p: [
           'Scale habits are for subjective daily ratings: energy, sleep quality, stress, confidence, focus quality, mood support, or any personal measure. They are useful because not everything important is yes/no.',
-          'When a Scale habit is synced with Journal, the same rating can support both habit progress and daily reflection. A user can log sleep quality from the habit board and still see that value in the Journal context.',
+          'When a Scale habit is synced with Journal, the same rating can support both habit progress and daily reflection. A user can log sleep quality from the habit board with a compact thin slider, keep the selected label visible, and still see that value in the Journal context.',
         ],
       },
       {
@@ -116,7 +116,7 @@ export const posts = [
       rows: [
         ['Mood', 'Good, Great, Okay', 'Journal entry header and insights'],
         ['Linked Task', 'Meditation done', 'Journal activity chip'],
-        ['Linked Count', 'Water 4/8', 'Linked count control and saved progress'],
+        ['Linked Count', 'Water 7/10', 'Journal activity chip and saved progress'],
         ['Linked Scale', 'Sleep quality 4/5', 'Journal scale and habit progress'],
         ['Independent snapshot', 'Reading done', 'Habit done timeline section'],
       ],
@@ -128,7 +128,7 @@ export const posts = [
       },
       {
         q: 'Why are partial Count habits useful?',
-        a: 'Partial counts show effort even before a target is complete. Water 4/8 or pages 12/30 can still explain the day later.',
+        a: 'Partial counts show effort even before a target is complete. Water 4/8, Water 7/10, or pages 12/30 can still explain the day later.',
       },
       ...commonFaq,
     ],
@@ -137,7 +137,7 @@ export const posts = [
     ...blogArticles[2],
     hero: 'Zen Shield is the focus foundation of KaiZenly+. It is built for real life: block distractions, keep important apps available, schedule protected time, and make early exits deliberate.',
     answer:
-      'Zen Shield is KaiZenly+ focus protection system. It combines a focus timer, real-time app blocking, a full-screen Focus Space, scheduled focus windows, bedtime mode, a Distraction Wall, Parachute exits, and an essential-app allow-list so users can focus without losing access to truly important apps.',
+      'Zen Shield is KaiZenly+ focus protection system. It combines a focus timer, real-time app blocking, a full-screen Focus Space, scheduled focus windows, bedtime mode, a Distraction Wall, Parachute exits, and an essential-app allow-list so users can focus without losing access to truly important apps. KaiZenly+ itself can still stay usable for Habits and Journal during a session, so focus protection does not stop the user from logging the day.',
     sections: [
       {
         h: 'A focus app should protect attention without breaking real life',
@@ -151,6 +151,13 @@ export const posts = [
         p: [
           'A Zen Shield session starts with a timer and a full-screen Focus Space. The user sees the remaining time, the allowed essentials, and the focus state clearly.',
           'If a blocked app is opened, KaiZenly+ can show a Distraction Wall that returns the user to focus. The goal is not punishment; the goal is to make distraction visible before it becomes automatic.',
+        ],
+      },
+      {
+        h: 'KaiZenly+ stays useful during a session',
+        p: [
+          'A focus app should not block the very tools that help the user keep the day organized. During an active Zen Shield session, KaiZenly+ can keep Habits, Journal, Insights, and Profile available.',
+          'The Focus tab can stay dimmed while the session is running, which keeps timer, end-session, call safety, parachute, and allowed-app controls on the focus wall. The user can still mark habits, write Journal notes, or review progress without weakening the focus lock around distracting apps.',
         ],
       },
       {
@@ -172,6 +179,7 @@ export const posts = [
       head: ['Focus need', 'Simple timer app', 'KaiZenly+ Zen Shield'],
       rows: [
         ['Block distractions', 'Usually yes', 'Yes, with full-screen focus protection'],
+        ['Use the routine app during focus', 'Often unclear or not part of the product', 'Habits and Journal can remain usable while the Focus tab stays dimmed'],
         ['Keep essential apps', 'Often limited', 'Approved allow-list up to 8 apps'],
         ['Automatic schedules', 'Often missing or basic', 'Focus windows and bedtime mode'],
         ['Early exit', 'Varies', 'Parachute system for deliberate exits'],
@@ -207,21 +215,21 @@ export const posts = [
         h: 'Count habits are for measurable targets',
         p: [
           'A Count habit tracks a number: glasses of water, pages read, minutes practiced, workouts completed, or repetitions done. The target gives the day a clear progress line.',
-          'KaiZenly+ treats linked Count progress as an exact total. This is important because editing the same Journal entry should not accidentally increase the count. The saved value represents the day, not the number of times the Save button was pressed.',
+          'KaiZenly+ treats linked Count progress as an exact total. This is important because editing the same Journal entry should not accidentally increase the count. The saved value represents the day, so the Journal can show Water 7/10, then Water 8/10, then Water 10/10 as the habit changes.',
         ],
       },
       {
         h: 'Scale habits are for subjective ratings',
         p: [
           'Some important habits cannot be counted cleanly. Energy, sleep quality, stress, confidence, soreness, focus quality, or emotional balance are better as ratings.',
-          'Scale habits let the user log a daily value without pretending the routine is yes/no. They can stay independent or sync with a Journal scale for a richer daily reflection.',
+          'Scale habits let the user log a daily value without pretending the routine is yes/no. They can stay independent or sync with a Journal scale for a richer daily reflection, and the habit board can keep the control visually minimal with a thin no-handle slider.',
         ],
       },
       {
         h: 'Choosing the right habit type',
         p: [
           'The best habit type depends on the question the user wants answered. If the question is “did I do it?”, use Task. If the question is “how many?”, use Count. If the question is “how was it?”, use Scale.',
-          'This makes the habit system flexible without making it complicated. The user can start small, then link only the habits that should become part of Journal.',
+          'This makes the habit system flexible without making it complicated. The user can start small, then link only the habits that should become part of Journal. Habit detail insights also make the link visible later, so the user can see whether a habit is independent or connected to a Journal activity or scale.',
         ],
       },
     ],
@@ -250,7 +258,7 @@ export const posts = [
     ...blogArticles[4],
     hero: 'Self-improvement data is personal. Habits show what someone is trying to change, Journal shows what they feel, and mood history can reveal private patterns. KaiZenly+ is built local-first so that data belongs to the user.',
     answer:
-      'Local-first self-improvement means the app works on the user device without a developer server, mandatory login, analytics SDKs, ads, or background tracking. KaiZenly+ stores habits, Journal, mood, and insights on the device, with optional encrypted backup controlled by the user.',
+      'Local-first self-improvement means the app works on the user device without a developer server, mandatory login, analytics SDKs, ads, or background tracking. KaiZenly+ stores habits, Journal, mood, and insights on the device, with optional encrypted backup controlled by the user, including scheduled Google Drive backup after setup.',
     sections: [
       {
         h: 'Why privacy matters more in self-improvement apps',
@@ -271,6 +279,7 @@ export const posts = [
         p: [
           'KaiZenly+ stores structured data on the device in encrypted form. Local backups are encrypted and protected by a password chosen by the user.',
           'Optional Google Drive backup uploads an already-encrypted backup to the user own Drive. Backups do not route to the developer, and normal use does not require the network.',
+          'After setup, the user can keep backup manual or schedule it hourly, daily, weekly, or monthly. Wi-Fi-only can be the default for larger backup files, and if the phone is offline at the scheduled time, backup can wait until the required connection is available.',
         ],
       },
       {
@@ -287,13 +296,13 @@ export const posts = [
         ['Is login required?', 'No mandatory login', 'Start using the app privately'],
         ['Does the developer collect data?', 'No developer server for normal use', 'Daily life stays on the device'],
         ['Are ads or analytics included?', 'No ads and no analytics SDKs', 'No tracking-based product model'],
-        ['Can the user back up data?', 'Yes, encrypted local and optional Drive backup', 'Control without developer access'],
+        ['Can the user back up data?', 'Yes, encrypted local, manual Drive, and scheduled Drive backup', 'Control without developer access'],
       ],
     },
     faqs: [
       {
         q: 'Does KaiZenly+ need the internet?',
-        a: 'Normal use works offline. Internet is only used for optional Google Drive backup and restore.',
+        a: 'Normal use works offline. Internet is only used for optional Google Drive backup and restore. Scheduled backup can wait until the selected network is available.',
       },
       {
         q: 'Is KaiZenly+ open source?',

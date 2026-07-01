@@ -14,7 +14,7 @@ const faqSchema = {
       name: "What is new in KaiZenly+ 1.4.3?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "KaiZenly+ 1.4.3 adds unified Journal and Habit sync, explicit Journal links for Task and Count habits, linked Count controls in Journal, synced Scale habits, independent habit snapshots in the timeline, editable Journal entries, auto-created check-in entries, full-screen habit alarms, and smoother habit setup UX.",
+        text: "KaiZenly+ 1.4.3 adds unified Journal and Habit sync, explicit Journal links for Task and Count habits, linked Count controls in Journal, linked Count chips such as Water 7/10, compact Scale habit sliders, clearer habit detail insights, synced Scale habits, independent habit snapshots, editable Journal entries, auto-created check-in entries, full-screen habit alarms, and smoother habit setup UX.",
       },
     },
     {
@@ -22,7 +22,7 @@ const faqSchema = {
       name: "How does unified Journal and Habit sync work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Users can explicitly link a habit to a Journal activity. Completing a linked habit can update that day's Journal entry, and selecting the linked Journal activity can update the habit. Count habits save an exact daily total, Scale habits sync with Journal scales, and independent habit progress can appear in the Journal timeline as snapshots.",
+        text: "Users can explicitly link a habit to a Journal activity. Completing a linked habit can update that day's Journal entry, and selecting the linked Journal activity can update the habit. Count habits save an exact daily total and can display chips such as Water 7/10, Scale habits sync with Journal scales, and independent habit progress can appear in the Journal timeline as snapshots.",
       },
     },
     {
@@ -30,7 +30,7 @@ const faqSchema = {
       name: "What are Scale habits?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Scale habits are daily rating habits for things like energy, sleep quality, stress, confidence, or focus quality. They can be independent or synced with a Journal scale. Any logged scale value counts as done for the day.",
+        text: "Scale habits are daily rating habits for things like energy, sleep quality, stress, confidence, or focus quality. They can be independent or synced with a Journal scale. Any logged scale value counts as done for the day, and the habit board can use a compact thin slider for quick inline logging.",
       },
     },
     {
@@ -38,7 +38,7 @@ const faqSchema = {
       name: "What changed in Journal?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Journal now supports flexible activities and categories, custom emoji items, custom scales, linked Task and Count habits, linked Count controls, habit snapshots, edit/delete menus, and auto-created check-in entries that do not show a neutral mood face.",
+        text: "Journal now supports flexible activities and categories, custom emoji items, custom scales, linked Task and Count habits, linked Count controls, linked Count chips with values, habit snapshots, edit/delete menus, and auto-created check-in entries that do not show a neutral mood face.",
       },
     },
     {
@@ -47,6 +47,22 @@ const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Normal reminders use notifications. Full-screen habit alarms can ring on screen and let the user mark a habit done, mark it missed, or snooze it for 30 minutes. Reminder and Alarm are independent for each habit.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What changed in Zen Shield focus sessions?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "KaiZenly+ can keep Habits, Journal, Insights, and Profile usable during an active Zen Shield focus session, while the Focus tab is dimmed and session controls stay on the focus wall.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can Google Drive backup run automatically?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. After Drive setup, KaiZenly+ can schedule encrypted Google Drive backups hourly, daily, weekly, or monthly, with Wi-Fi-only as the default network choice and delayed execution when the required connection is not available.",
       },
     },
   ],
@@ -58,7 +74,7 @@ const faqSchema = {
   path="/whats-new/"
   softwareApp={true}
   jsonLd={[faqSchema]}
-  description="KaiZenly+ 1.4.3 adds unified Journal and Habit sync, linked Count controls, habit snapshots, editable Journal entries, synced Scale habits, full-screen alarms, and smoother habit setup UX."
+  description="KaiZenly+ 1.4.3 adds unified Journal and Habit sync, linked Count chips, compact Scale sliders, session-time app access, scheduled Drive backup, full-screen alarms, and smoother setup."
 >
   <section class="section">
     <div class="container" style="max-width:820px">
@@ -67,7 +83,9 @@ const faqSchema = {
       <p class="lede" style="margin-top:16px">
         Released {releaseDate}, KaiZenly+ {app.version} expands the habit and Journal system with
         <strong>unified daily records</strong>, linked Task and Count habits, synced Scale habits,
-        editable Journal entries, independent habit snapshots, and full-screen habit alarms, while
+        linked Count value chips, compact Scale sliders, clearer habit detail insights,
+        editable Journal entries, independent habit snapshots, full-screen habit alarms,
+        session-time access to Habits and Journal, and optional scheduled Drive backups, while
         keeping the same local-first privacy model.
       </p>
       <p class="lede" style="margin-top:14px">
@@ -96,14 +114,16 @@ const faqSchema = {
           <h2 class="display-sm">Linked habits</h2>
           <p>
             Task and Count habits can be explicitly linked with Journal activities. Completing a
-            linked habit can update Journal, and selecting the activity can update the habit.
+            linked habit can update Journal, and selecting the activity can update the habit. Count
+            chips can show progress directly, such as Water 7/10.
           </p>
         </article>
         <article class="card">
           <h2 class="display-sm">Scale habits</h2>
           <p>
             Scale sliders are blank by default, monochrome, smooth, and can log directly from the
-            habit board. Synced Scale values also appear in daily Journal reflection.
+            habit board. On the home card they can stay compact and thin, while synced Scale values
+            also appear in daily Journal reflection.
           </p>
         </article>
         <article class="card">
@@ -127,6 +147,21 @@ const faqSchema = {
             can show a separate <strong>Habit done</strong> row for completed and partial habit progress.
           </p>
         </article>
+        <article class="card">
+          <h2 class="display-sm">Focus stays practical</h2>
+          <p>
+            During an active Zen Shield session, KaiZenly+ can remain usable for Habits, Journal,
+            Insights, and Profile. The Focus tab stays dimmed, and timer/end/call controls remain
+            on the focus wall.
+          </p>
+        </article>
+        <article class="card">
+          <h2 class="display-sm">Scheduled backup</h2>
+          <p>
+            Google Drive backup can run hourly, daily, weekly, or monthly after setup. Backups stay
+            encrypted, can default to Wi-Fi only, and can wait for network access when the phone is offline.
+          </p>
+        </article>
       </div>
     </div>
   </section>
@@ -147,8 +182,10 @@ const faqSchema = {
             <li>Count habits for measurable daily targets.</li>
             <li>Scale habits for subjective daily ratings.</li>
             <li>Scale habits can now be logged inline from the habit board.</li>
+            <li>Scale habit home cards use a compact thin slider instead of a bulky handle.</li>
             <li>Count habits show cleaner inline progress with the selected number or count label.</li>
             <li>Task and Count habits can be explicitly linked with Journal activities.</li>
+            <li>Habit detail insights show Journal link status and type-specific habit context.</li>
             <li>Scale habits can be independent or synced with Journal scales.</li>
             <li>Synced habit logs can create or update that day’s Journal entry.</li>
             <li>Custom scale creation inside habit setup.</li>
@@ -161,6 +198,7 @@ const faqSchema = {
             <li>Custom emoji items for personal journaling language.</li>
             <li>Custom daily scales for energy, stress, sleep quality, focus quality, or similar measures.</li>
             <li>Linked Count activities open a compact count control and save the exact daily total.</li>
+            <li>Linked Count activity chips can show values such as Water 7/10 or Water 10/10.</li>
             <li>Synced values can be edited later with mood, notes, tags, photos, and voice.</li>
             <li>Edit removal can unset matching linked habit or scale values after confirmation.</li>
             <li>Auto-created sync entries use a check-in style header instead of a neutral mood face.</li>
@@ -170,6 +208,7 @@ const faqSchema = {
           <h3>Unified timeline</h3>
           <ul class="feature-list">
             <li>Manual Journal activities remain in their normal chip area.</li>
+            <li>Linked Count activities can stay in the top chip row with their value attached.</li>
             <li>A separate <strong>Habit done</strong> section can show completed habit snapshots.</li>
             <li>Partial Count habits can appear as labels such as Water 4/8.</li>
             <li>Missed or zero-progress habits stay hidden from the timeline.</li>
@@ -197,9 +236,21 @@ const faqSchema = {
         <article class="card">
           <h3>Zen Shield</h3>
           <ul class="feature-list">
+            <li>During an active session, Habits, Journal, Insights, and Profile can remain usable inside KaiZenly+.</li>
+            <li>The Focus tab can dim and stay unavailable during a running session, keeping timer/end/call/allowed-app controls on the focus wall.</li>
             <li>Approved essentials include Phone, Messaging/SMS, WhatsApp, Gmail, Outlook, Google Keep, AI/productivity tools, and major banking/payment apps where installed.</li>
             <li>Broad social and streaming apps are not treated as essentials.</li>
             <li>Missing banking or productivity apps can be requested from inside the app.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Backup</h3>
+          <ul class="feature-list">
+            <li>Google Drive backup can move beyond manual export with Off, Hourly, Daily, Weekly, and Monthly schedule options.</li>
+            <li>Daily, weekly, and monthly schedules can align to a chosen time of day.</li>
+            <li>Wi-Fi-only backup can be the default for larger encrypted backup files.</li>
+            <li>If the required connection is missing, backup can wait and run when network access returns.</li>
+            <li>Backups still go to the user’s own hidden Drive app folder, never to a developer server.</li>
           </ul>
         </article>
       </div>

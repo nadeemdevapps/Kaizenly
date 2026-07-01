@@ -180,6 +180,7 @@ export const featureGroups = [
       'Protect your attention with scheduled, allow-list aware Zen Shield focus sessions.',
     points: [
       'A Zen Shield focus timer (screen timer): start a timed session with a full-screen Focus Space showing a live countdown, blocked-attempt counter, and your allowed apps.',
+      'During an active Zen Shield session, KaiZenly+ itself stays usable for Habits, Journal, Insights, and Profile, while the Focus tab becomes dimmed and unavailable so the active wall remains the session-control surface.',
       'Zen Shield app blocking in real time via Accessibility + Usage Access + a foreground service.',
       'Allowed-apps list: keep up to 8 installed approved essentials, including Phone, Messaging/SMS, WhatsApp, Gmail, Outlook, Google Keep, AI/productivity tools, and major banking/payment apps where available.',
       'Missing essential app request: if a legitimate banking or productivity app is not available in the picker, the user can request review from inside the app.',
@@ -199,8 +200,10 @@ export const featureGroups = [
       'Three habit types: Task habits for yes/no routines, Count habits for numeric goals, and Scale habits for daily 1-5 style ratings.',
       'Task and Count habits can be explicitly linked with Journal activities, so a completed routine such as meditation, study, reading, water, or home meal can also appear in the same daily Journal record.',
       'Scale habits can be independent, or synced with the shared Journal scale catalog so habit ratings can also appear in daily reflection.',
+      'Scale habit cards can use compact inline logging on the habit board, with a thin monochrome track and a readable selected label instead of a bulky control.',
       'Synced habit logs can create or update the matching Journal entry for that day, so the user can add mood, notes, activities, photos, or voice later without starting from zero.',
       'Independent habit progress is still preserved in Journal snapshots after save or auto-log, so the timeline can show completed habits and partial Count progress such as Water 4/8.',
+      'Habit detail insights show whether a habit is linked to Journal, where it is linked, and type-specific context for Task, Count, and Scale habits.',
       'Per-habit reminders and full-screen habit alarms are independent: use a normal notification, a ringing alarm, both, or neither.',
       'Full-screen habit alarms can open a dedicated alarm screen with done, missed, stop, and 30-minute snooze actions.',
       'Streaks, best streaks, consistency %, calendar heatmaps, and per-habit analytics.',
@@ -219,6 +222,7 @@ export const featureGroups = [
       'Journal scales and Scale habits share the same scale system, so users can reuse a scale across reflection and habit tracking.',
       'Linked habit activities sync both ways: selecting a Journal activity can mark the linked habit done, and completing the habit can select the matching Journal activity for that day.',
       'Linked Count habits use an exact daily total instead of duplicate taps, so editing and saving the same Journal day does not inflate progress.',
+      'Linked Count activities can show their current total directly in the Journal activity chip, for example Water 7/10 or Water 10/10.',
       'Auto-created synced entries use a check-in style header instead of a neutral mood face, and the timeline separates manual activities from the Habit done snapshot.',
       'Optional photos and voice notes, stored in app-private storage.',
       'Case-insensitive full-text search and selective Markdown sharing for the entries you choose.',
@@ -241,11 +245,13 @@ export const featureGroups = [
   {
     id: 'backup',
     title: 'Backup & Restore',
-    summary: 'Keep your data under your control with encrypted, user-initiated backups.',
+    summary: 'Keep your data under your control with encrypted manual and scheduled backups.',
     points: [
       'Local encrypted backup: Data Only, or Full Backup including journal media.',
       'Encrypted and locked with a password only you know (not recoverable by the app).',
       'Optional Google Drive backup to your own hidden Drive app folder.',
+      'Optional scheduled Google Drive backup can run hourly, daily, weekly, or monthly after setup, with a Wi-Fi-only default for larger backups.',
+      'If the phone is offline at the scheduled time, backup can wait for network access and run when the connection is available again.',
       'Restore previews the backup contents before replacing local data.',
     ],
   },
@@ -347,7 +353,7 @@ export const directAnswers = [
   },
   {
     q: 'What is Zen Shield focus?',
-    a: 'Zen Shield focus is KaiZenly+’s focus protection system. It starts a timed focus session, blocks distracting apps, shows a full-screen Focus Space, lets selected essential apps remain available, and can run automatically through schedules or bedtime mode.',
+    a: 'Zen Shield focus is KaiZenly+’s focus protection system. It starts a timed focus session, blocks distracting apps, shows a full-screen Focus Space, lets selected essential apps remain available, and can run automatically through schedules or bedtime mode. During a session, KaiZenly+ can still be used for Habits and Journal while the Focus tab is dimmed, so the user can log the day without ending protection.',
   },
   {
     q: 'Is KaiZenly+ a Blockit alternative?',
@@ -375,15 +381,15 @@ export const directAnswers = [
   },
   {
     q: 'How do habits and Journal sync in KaiZenly+?',
-    a: 'KaiZenly+ can keep habits and Journal connected through an explicit link. A linked Task habit can select the matching Journal activity for the same day, a linked Count habit can save an exact daily total, and a linked Scale habit can update the matching Journal scale. Independent habit progress is not shown in the composer, but it can still be saved into the daily Journal snapshot for timeline context.',
+    a: 'KaiZenly+ can keep habits and Journal connected through an explicit link. A linked Task habit can select the matching Journal activity for the same day, a linked Count habit can save and display an exact daily total such as Water 7/10, and a linked Scale habit can update the matching Journal scale. Independent habit progress is not shown in the composer, but it can still be saved into the daily Journal snapshot for timeline context.',
   },
   {
     q: 'Why is KaiZenly+ different from ordinary habit trackers and journal apps?',
-    a: 'Most habit trackers and journal apps keep daily actions and daily reflection separate. KaiZenly+ brings them into one daily record: linked habits can update Journal activities, Scale habits can update Journal scales, Count habits can preserve exact progress, and independent habit progress can still appear in the Journal timeline.',
+    a: 'Most habit trackers and journal apps keep daily actions and daily reflection separate. KaiZenly+ brings them into one daily record: linked habits can update Journal activities, Scale habits can update Journal scales, Count habits can preserve exact progress such as Water 7/10, and independent habit progress can still appear in the Journal timeline.',
   },
   {
     q: 'What is a unified daily record in KaiZenly+?',
-    a: 'A unified daily record is a single Journal day that can preserve mood, notes, activities, linked habit completions, Scale ratings, Count totals, and independent habit snapshots. It lets the user review what happened without rebuilding the same day in separate habit and journal tools.',
+    a: 'A unified daily record is a single Journal day that can preserve mood, notes, activities, linked habit completions, Scale ratings, Count totals like Water 7/10, and independent habit snapshots. It lets the user review what happened without rebuilding the same day in separate habit and journal tools.',
   },
   {
     q: 'How do KaiZenly+ habit alarms work?',
@@ -391,11 +397,15 @@ export const directAnswers = [
   },
   {
     q: 'What changed in the KaiZenly+ Journal?',
-    a: 'The Journal now supports flexible activities/categories instead of only fixed items, custom emoji items, custom daily scales, habit-linked activities, linked Count controls, habit snapshots, and sync with Scale habits. A synced habit log can create or update that day’s Journal entry, then the user can edit the same day later to add mood, notes, tags, activities, photos, or voice.',
+    a: 'The Journal now supports flexible activities/categories instead of only fixed items, custom emoji items, custom daily scales, habit-linked activities, linked Count controls, habit snapshots, and sync with Scale habits. Linked Count chips can show totals such as Water 7/10, and a synced habit log can create or update that day’s Journal entry so the user can edit the same day later with mood, notes, tags, activities, photos, or voice.',
   },
   {
     q: 'Does KaiZenly+ work offline?',
-    a: 'Yes. Normal KaiZenly+ use works offline with no mandatory account, no developer server, no ads, and no analytics SDKs. Optional Google Drive backup is the only network feature and uploads an already-encrypted backup to the user’s own Drive.',
+    a: 'Yes. Normal KaiZenly+ use works offline with no mandatory account, no developer server, no ads, and no analytics SDKs. Optional Google Drive backup is the only network feature and uploads an already-encrypted backup to the user’s own Drive. Scheduled backups can wait until a connection is available.',
+  },
+  {
+    q: 'Can KaiZenly+ make automatic Google Drive backups?',
+    a: 'Yes. After the user links Google Drive and sets a backup password, KaiZenly+ can schedule encrypted Drive backups hourly, daily, weekly, or monthly. Backups still go to the user’s own hidden Drive app folder, can default to Wi-Fi only, and are skipped or delayed when required setup or network access is missing.',
   },
   {
     q: 'Who should use KaiZenly+?',
@@ -424,11 +434,11 @@ export const unifiedHabitJournalSync = {
     },
     {
       type: 'Count habits',
-      sync: 'A linked Count habit stores an exact daily total. Journal editing updates the total instead of adding duplicate taps, so repeated saves stay clean.',
+      sync: 'A linked Count habit stores and displays an exact daily total. Journal can show a chip such as Water 7/10 or Water 10/10 instead of a plain activity label, and repeated saves stay clean.',
     },
     {
       type: 'Scale habits',
-      sync: 'A linked Scale habit shares a daily rating with Journal scales, useful for energy, sleep quality, stress, confidence, focus quality, or any custom measure.',
+      sync: 'A linked Scale habit shares a daily rating with Journal scales, while the home card can stay visually compact with a thin, no-handle slider and a readable label such as Low, OK, or High.',
     },
     {
       type: 'Independent habits',
@@ -500,7 +510,7 @@ export const faqs = [
   },
   {
     q: 'What is the Google Drive backup used for?',
-    a: 'It is an optional, manual backup of an already-encrypted file to your own hidden Drive app folder. Each user links their own Google account; backups never go to the developer. This flow is still in testing.',
+    a: 'It is an optional backup of an already-encrypted file to your own hidden Drive app folder. Users can run backup manually or schedule it hourly, daily, weekly, or monthly after setup. Each user links their own Google account; backups never go to the developer. This flow is still in testing.',
   },
   {
     q: 'Is it on the Play Store?',
