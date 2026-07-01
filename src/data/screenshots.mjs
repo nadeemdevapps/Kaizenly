@@ -37,6 +37,9 @@ export const categories = [
     blurb:
       'Daily habits with a greeting, a week strip, progress, reminders, alarms, and per-habit analytics — for Task, Count, and Scale habit types.',
     shots: [
+      { file: '58_habit_journal_sync_no_sync.jpg', alt: 'Habit setup showing Journal sync turned off, for an independent habit that can still appear later in the Journal timeline snapshot', theme: 'dark' },
+      { file: '59_habit_journal_sync_existing.jpg', alt: 'Habit setup showing the Existing Journal sync option, where a habit can link to an existing Journal activity', theme: 'dark' },
+      { file: '60_habit_journal_sync_new.jpg', alt: 'Habit setup showing the New Journal sync option, where a new Journal activity can be created and linked to the habit', theme: 'dark' },
       { file: '43_habits_list_progress_light.webp', alt: 'Habits dashboard with a greeting, a calendar strip and three habits with progress bars', theme: 'light' },
       { file: '07_habits_empty_state.webp', alt: 'Empty habits screen with a sprout illustration and "No habits yet"', theme: 'dark' },
       { file: '09_habits_with_one_habit.webp', alt: 'Habits list with a single habit, Morning meditation, not done yet', theme: 'dark' },

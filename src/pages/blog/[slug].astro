@@ -1,0 +1,105 @@
+---
+import Base from "../../layouts/Base.astro";
+import DownloadCta from "../../components/DownloadCta.astro";
+import { withBase } from "../../config.mjs";
+import { posts } from "../../data/blog.mjs";
+
+export function getStaticPaths() {
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const path = `/blog/${post.slug}/`;
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.title,
+  description: post.description,
+  datePublished: "2026-07-01",
+  dateModified: "2026-07-01",
+  mainEntityOfPage: path,
+  author: {
+    "@type": "Organization",
+    name: "KaiZenly+",
+  },
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: post.faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+---
+
+<Base
+  title={post.title}
+  path={path}
+  description={post.description}
+  jsonLd={[articleSchema, faqSchema]}
+>
+  <section class="section">
+    <div class="container" style="max-width:880px">
+      <span class="eyebrow">{post.category} · {post.readingTime}</span>
+      <h1 class="display-lg" style="margin-top:10px">{post.title}</h1>
+      <p class="lede" style="margin-top:16px">{post.hero}</p>
+      <div class="btn-row" style="margin-top:24px">
+        <a class="btn btn-secondary" href={withBase("/blog/")}>All guides</a>
+        <DownloadCta />
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container prose">
+      <aside class="card" style="margin-bottom:30px">
+        <span class="eyebrow">Direct answer</span>
+        <p style="margin-top:10px"><strong>{post.answer}</strong></p>
+      </aside>
+
+      {post.sections.map((section) => (
+        <>
+          <h2>{section.h}</h2>
+          {section.p.map((paragraph) => <p>{paragraph}</p>)}
+        </>
+      ))}
+
+      <h2>Quick comparison</h2>
+      <div style="overflow-x:auto">
+        <table class="compare-table">
+          <thead>
+            <tr>{post.table.head.map((h) => <th>{h}</th>)}</tr>
+          </thead>
+          <tbody>
+            {post.table.rows.map((row) => (
+              <tr>{row.map((cell) => <td>{cell}</td>)}</tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Where to go next</h2>
+      <p>
+        Explore the <a href={withBase("/habits/")}>Habit tracker</a>, the
+        <a href={withBase("/journal/")}> Journal</a>, <a href={withBase("/zen-shield/")}>Zen Shield focus</a>,
+        and the <a href={withBase("/privacy/")}>privacy model</a>. For the latest feature changes,
+        read <a href={withBase("/whats-new/")}>What’s new</a>.
+      </p>
+
+      <h2>FAQ</h2>
+      <div class="answer-list">
+        {post.faqs.map((item) => (
+          <article class="answer-card">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

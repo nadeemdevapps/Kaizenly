@@ -10,7 +10,7 @@ export const app = {
   alternateName: 'KaiZenly Plus',
   tagline: 'Quiet the noise, reclaim your focus, and improve calmly—step by step',
   shortTagline: 'Small steps. Better days.',
-  version: '1.4.0',
+  version: '1.4.3',
   platform: 'Android',
   minAndroid: 'Android 8.0 (API 26)',
   price: 'Free',
@@ -378,6 +378,14 @@ export const directAnswers = [
     a: 'KaiZenly+ can keep habits and Journal connected through an explicit link. A linked Task habit can select the matching Journal activity for the same day, a linked Count habit can save an exact daily total, and a linked Scale habit can update the matching Journal scale. Independent habit progress is not shown in the composer, but it can still be saved into the daily Journal snapshot for timeline context.',
   },
   {
+    q: 'Why is KaiZenly+ different from ordinary habit trackers and journal apps?',
+    a: 'Most habit trackers and journal apps keep daily actions and daily reflection separate. KaiZenly+ brings them into one daily record: linked habits can update Journal activities, Scale habits can update Journal scales, Count habits can preserve exact progress, and independent habit progress can still appear in the Journal timeline.',
+  },
+  {
+    q: 'What is a unified daily record in KaiZenly+?',
+    a: 'A unified daily record is a single Journal day that can preserve mood, notes, activities, linked habit completions, Scale ratings, Count totals, and independent habit snapshots. It lets the user review what happened without rebuilding the same day in separate habit and journal tools.',
+  },
+  {
     q: 'How do KaiZenly+ habit alarms work?',
     a: 'Habit alarms are independent from normal reminder notifications. A habit can have a reminder, a full-screen alarm, both, or neither. Full-screen alarms can ring on a dedicated alarm screen and let the user mark done, mark missed, stop the alarm, or snooze for 30 minutes.',
   },
@@ -392,6 +400,83 @@ export const directAnswers = [
   {
     q: 'Who should use KaiZenly+?',
     a: 'KaiZenly+ is for students, professionals, and anyone who wants calmer phone focus. It is especially useful when you need scheduled focus sessions, bedtime protection, essential apps available during focus, and a private routine system in one Android app.',
+  },
+];
+
+export const unifiedHabitJournalSync = {
+  short:
+    'KaiZenly+ connects habits and Journal into one daily record, so routines, ratings, counts, mood, and reflection can live together instead of being managed twice.',
+  problem:
+    'Most habit trackers ask the user to complete routines in one place, while journal apps ask the user to describe the same day again somewhere else. That creates duplicate work and weakens the daily record.',
+  promise:
+    'KaiZenly+ keeps the habit board fast and the Journal expressive. Linked habits can update Journal automatically, Journal can update linked habits, and independent habit progress can still be preserved after save as timeline context.',
+  benefits: [
+    'One daily record for mood, notes, activities, habits, scales, and progress.',
+    'Less duplicate tapping because a linked habit can also become a Journal activity.',
+    'Cleaner reflection because the Journal timeline can show what was done, not only what was written.',
+    'Better long-term memory because partial Count progress and independent habit completions can remain visible later.',
+    'A calmer workflow because manual Journal entry stays simple while saved entries keep richer context.',
+  ],
+  habitTypes: [
+    {
+      type: 'Task habits',
+      sync: 'A linked Task habit works like a yes/no daily action. Completing it can select the matching Journal activity, and selecting that Journal activity can mark the habit done.',
+    },
+    {
+      type: 'Count habits',
+      sync: 'A linked Count habit stores an exact daily total. Journal editing updates the total instead of adding duplicate taps, so repeated saves stay clean.',
+    },
+    {
+      type: 'Scale habits',
+      sync: 'A linked Scale habit shares a daily rating with Journal scales, useful for energy, sleep quality, stress, confidence, focus quality, or any custom measure.',
+    },
+    {
+      type: 'Independent habits',
+      sync: 'Independent habits stay out of the composer, but completed progress and partial Count totals can still appear in the saved Journal timeline as context.',
+    },
+  ],
+};
+
+export const blogArticles = [
+  {
+    slug: 'why-habit-trackers-and-journals-should-not-be-separate',
+    title: 'Why habit trackers and journals should not be separate',
+    description:
+      'Most people do not live in separate habit and journal systems. KaiZenly+ connects routines and reflection into one daily record.',
+    category: 'Unified Journal',
+    readingTime: '9 min read',
+  },
+  {
+    slug: 'unified-daily-records',
+    title: 'Unified daily records: habits, mood, scales, and reflection together',
+    description:
+      'A detailed guide to KaiZenly+ unified daily records: linked habits, Count totals, Scale ratings, independent snapshots, and mood-aware reflection.',
+    category: 'Product Guide',
+    readingTime: '11 min read',
+  },
+  {
+    slug: 'zen-shield-focus-protection',
+    title: 'Zen Shield: focus protection without losing essential apps',
+    description:
+      'Zen Shield protects attention with timed blocking, scheduled focus, bedtime mode, and an essential-app allow-list.',
+    category: 'Zen Shield',
+    readingTime: '10 min read',
+  },
+  {
+    slug: 'task-count-scale-habits',
+    title: 'Task, Count, and Scale habits explained',
+    description:
+      'Learn when to use Task habits, Count goals, and Scale ratings, and how each habit type fits into a calmer daily routine.',
+    category: 'Habits',
+    readingTime: '10 min read',
+  },
+  {
+    slug: 'local-first-private-self-improvement',
+    title: 'Local-first self-improvement: private habits, mood, journal, and backup',
+    description:
+      'Why KaiZenly+ keeps personal growth data on the device, avoids tracking, and uses encrypted user-controlled backup.',
+    category: 'Privacy',
+    readingTime: '9 min read',
   },
 ];
 
@@ -448,6 +533,12 @@ export const pages = [
   { path: '/', title: 'Home', nav: true },
   { path: '/features/', title: 'Features', nav: true },
   { path: '/whats-new/', title: 'What’s new', nav: true },
+  { path: '/blog/', title: 'Blog', nav: true },
+  ...blogArticles.map((post) => ({
+    path: `/blog/${post.slug}/`,
+    title: post.title,
+    nav: false,
+  })),
   { path: '/zen-shield/', title: 'Zen Shield', nav: true },
   { path: '/answers/', title: 'Answers', nav: false },
   { path: '/design/', title: 'Design Philosophy', nav: false },

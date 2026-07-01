@@ -3,7 +3,7 @@ import Base from "../layouts/Base.astro";
 import Phone from "../components/Phone.astro";
 import DownloadCta from "../components/DownloadCta.astro";
 import { withBase } from "../config.mjs";
-import { allowedApps, app, helpsWith, trustStrip } from "../data/app.mjs";
+import { allowedApps, app, helpsWith, trustStrip, unifiedHabitJournalSync } from "../data/app.mjs";
 import { heroShots } from "../data/screenshots.mjs";
 ---
 
@@ -106,6 +106,39 @@ import { heroShots } from "../data/screenshots.mjs";
       </div>
       <div class="split-media">
         <Phone file="54_focus_protected_wall_light.webp" alt="KaiZenly+ Focus Protected wall shown when a blocked app is opened" />
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIFIED DAILY RECORD -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Unified daily record</span>
+        <h2 class="display-md" style="margin-top:10px">Your habits and Journal finally describe the same day</h2>
+        <p class="lede">
+          {unifiedHabitJournalSync.problem} KaiZenly+ solves this with a calmer model:
+          linked habits can become Journal context, Journal can update linked habits, and independent
+          progress can still be preserved in the saved timeline without cluttering the writing flow.
+        </p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Linked habits</h3>
+          <p>Task, Count, and Scale habits can connect with Journal activities or scales, so one action can support both progress and reflection.</p>
+        </article>
+        <article class="card">
+          <h3>Independent snapshots</h3>
+          <p>Habits that are not linked stay independent, but completed progress and partial counts can still appear later as daily context.</p>
+        </article>
+        <article class="card">
+          <h3>Less duplicate work</h3>
+          <p>The user does not have to rebuild the same day twice. The habit board stays quick, and Journal becomes the richer memory.</p>
+        </article>
+      </div>
+      <div class="btn-row" style="justify-content:center;margin-top:28px">
+        <a class="btn btn-secondary" href={withBase("/blog/unified-daily-records/")}>Read the unified record guide</a>
+        <a class="btn btn-ghost" href={withBase("/journal/")}>See Journal sync →</a>
       </div>
     </div>
   </section>

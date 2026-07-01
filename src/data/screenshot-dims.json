@@ -214,5 +214,17 @@
   "55_home_widget_habits.webp": {
     "w": 1080,
     "h": 2400
+  },
+  "58_habit_journal_sync_no_sync.jpg": {
+    "w": 576,
+    "h": 1280
+  },
+  "59_habit_journal_sync_existing.jpg": {
+    "w": 576,
+    "h": 1280
+  },
+  "60_habit_journal_sync_new.jpg": {
+    "w": 576,
+    "h": 1280
   }
 }

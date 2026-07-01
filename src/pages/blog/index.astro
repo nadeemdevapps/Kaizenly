@@ -1,0 +1,60 @@
+---
+import Base from "../../layouts/Base.astro";
+import DownloadCta from "../../components/DownloadCta.astro";
+import { withBase } from "../../config.mjs";
+import { posts } from "../../data/blog.mjs";
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: "KaiZenly+ Blog",
+  description:
+    "Guides about Zen Shield focus, unified habit and Journal sync, privacy-first self-improvement, and calmer daily routines.",
+  blogPost: posts.map((post) => ({
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    url: withBase(`/blog/${post.slug}/`),
+  })),
+};
+---
+
+<Base
+  title="Blog — Habit Journal Sync, Zen Shield & Private Self-Improvement"
+  path="/blog/"
+  description="Detailed KaiZenly+ guides about unified habit and Journal sync, Zen Shield focus protection, Task/Count/Scale habits, and local-first privacy."
+  jsonLd={[blogSchema]}
+>
+  <section class="section">
+    <div class="container" style="max-width:860px">
+      <span class="eyebrow">Blog</span>
+      <h1 class="display-lg" style="margin-top:10px">Deep guides for calmer self-improvement</h1>
+      <p class="lede" style="margin-top:16px">
+        KaiZenly+ is not only a checklist, not only a journal, and not only an app blocker.
+        These guides explain the bigger idea: protected focus, unified daily records, linked
+        habits, private mood tracking, and a local-first routine system that keeps the user in control.
+      </p>
+      <div class="btn-row" style="margin-top:24px">
+        <DownloadCta />
+        <a class="btn btn-secondary" href={withBase("/whats-new/")}>See what changed</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface);border-block:1px solid var(--hairline)">
+    <div class="container">
+      <div class="grid grid-2">
+        {posts.map((post) => (
+          <article class="card card-hover">
+            <span class="eyebrow">{post.category} · {post.readingTime}</span>
+            <h2 class="display-sm" style="margin-top:10px">{post.title}</h2>
+            <p>{post.description}</p>
+            <a class="btn btn-ghost" style="margin-top:18px" href={withBase(`/blog/${post.slug}/`)}>
+              Read guide →
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

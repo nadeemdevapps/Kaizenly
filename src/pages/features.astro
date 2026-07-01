@@ -3,7 +3,7 @@ import Base from "../layouts/Base.astro";
 import Phone from "../components/Phone.astro";
 import DownloadCta from "../components/DownloadCta.astro";
 import { withBase } from "../config.mjs";
-import { allowedApps, featureGroups } from "../data/app.mjs";
+import { allowedApps, featureGroups, unifiedHabitJournalSync } from "../data/app.mjs";
 
 const media = {
   focus: { file: "42_focus_setup_light_full.webp", alt: "Focus session setup with allowed apps", link: "/zen-shield/" },
@@ -37,6 +37,27 @@ const media = {
           Messaging/SMS, WhatsApp, Gmail, Outlook, Google Keep, AI/productivity tools, and major
           banking/payment apps where installed. {allowedApps.request}
         </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface);border-block:1px solid var(--hairline)">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The connected routine</span>
+        <h2 class="display-md" style="margin-top:10px">A premium habit tracker should remember the whole day</h2>
+        <p class="lede">
+          {unifiedHabitJournalSync.short} Most apps make the user choose: track habits quickly,
+          or write a reflective journal manually. KaiZenly+ is designed so both can support each other.
+        </p>
+      </div>
+      <div class="grid grid-4">
+        {unifiedHabitJournalSync.habitTypes.map((item) => (
+          <article class="card">
+            <h3>{item.type}</h3>
+            <p>{item.sync}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>

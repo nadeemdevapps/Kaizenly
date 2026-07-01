@@ -232,3 +232,33 @@ These rules are baked into the project and must be followed:
 6. **Privacy-first positioning** — KaiZenly+ is local-first with no developer server, no mandatory login, no tracking. This is the core identity.
 7. **Screenshots** — backup screenshots with visible Google account emails are privacy-masked by `scripts/process-screenshots.mjs`. Screenshot 48 was excluded entirely.
 8. **Comparisons** — when comparing to apps like Blockit, keep it factual and fair, never disparaging.
+
+---
+
+## Future Screenshot TODOs — Unified Journal + Habit Sync
+
+The website now contains full marketing copy for unified Journal + Habit sync. Some newer app states still need fresh screenshots when they are available. When the user provides them, replace the placeholder cards on `/journal/` and update `src/data/screenshots.mjs`, `src/data/screenshot-dims.json`, and the relevant page galleries.
+
+### Needed screenshots
+
+| Slot | Target page | What the screenshot should show | Suggested filename | Suggested alt text |
+|------|-------------|----------------------------------|--------------------|--------------------|
+| Synced daily timeline | `/journal/`, `/screenshots/` | A saved Daily log with a linked Journal activity chip and a separate `Habit done` section | `61_journal_synced_timeline.webp` | `Journal daily log showing a synced activity and a separate Habit done section` |
+| Linked Count control | `/journal/`, `/blog/unified-daily-records/` if screenshots are added there later | Journal composer with a linked Count habit sheet open, showing plus, minus, reset, and done controls | `62_journal_linked_count_control.webp` | `Journal linked Count control showing exact daily progress controls` |
+| Synced Scale rating | `/journal/`, `/habits/`, `/screenshots/` | A Scale habit value reflected inside the Journal scale section or saved daily record | `63_journal_synced_scale_rating.webp` | `Journal scale section showing a synced Scale habit rating` |
+
+### Replacement workflow
+
+1. Put the final screenshot in `public/screenshots/` using the suggested filename.
+2. Add the real dimensions to `src/data/screenshot-dims.json`.
+3. Add the screenshot to the right category in `src/data/screenshots.mjs`.
+4. Replace the placeholder card in `src/pages/journal.astro` with `Shot` or `Phone` once the screenshot is ready.
+5. Run `npm run build`; then run `node scripts/check-links.mjs` if the build succeeds.
+
+### Current new screenshots already added
+
+| File | Shows |
+|------|-------|
+| `58_habit_journal_sync_no_sync.jpg` | Habit setup with Journal sync turned off for an independent habit |
+| `59_habit_journal_sync_existing.jpg` | Habit setup with an existing Journal activity link |
+| `60_habit_journal_sync_new.jpg` | Habit setup creating and linking a new Journal activity |

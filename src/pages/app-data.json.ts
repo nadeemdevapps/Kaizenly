@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { absUrl } from "../config.mjs";
-import { allowedApps, app, permissions, directAnswers, featureGroups, permissionGrantModel, positioning } from "../data/app.mjs";
+import { allowedApps, app, permissions, directAnswers, featureGroups, permissionGrantModel, positioning, unifiedHabitJournalSync, blogArticles } from "../data/app.mjs";
 import { categories } from "../data/screenshots.mjs";
 
 export const GET: APIRoute = () => {
@@ -126,6 +126,36 @@ export const GET: APIRoute = () => {
       journalFlexibility:
         "Journal supports flexible activities/categories, custom emoji items, custom scales, and prompt-based entries instead of only fixed reflection items.",
     },
+    unifiedHabitJournalSync: {
+      summary: unifiedHabitJournalSync.short,
+      problem: unifiedHabitJournalSync.problem,
+      promise: unifiedHabitJournalSync.promise,
+      benefits: unifiedHabitJournalSync.benefits,
+      habitTypes: unifiedHabitJournalSync.habitTypes,
+      safeClaim:
+        "Most habit trackers and journal apps keep actions and reflection separate. KaiZenly+ is positioned as a premium unified daily record system without making unsupported world-first or ranking claims.",
+    },
+    blogArticles: blogArticles.map((post) => ({
+      title: post.title,
+      description: post.description,
+      category: post.category,
+      readingTime: post.readingTime,
+      url: absUrl(`/blog/${post.slug}/`),
+    })),
+    futureScreenshotPlaceholders: [
+      {
+        target: "Updated Journal timeline",
+        needed: "A screenshot showing a synced Journal activity and the separate Habit done section in one saved Daily log.",
+      },
+      {
+        target: "Linked Count habit control",
+        needed: "A screenshot showing a linked Count activity opened from the Journal composer with plus/minus/reset controls.",
+      },
+      {
+        target: "Scale habit synced with Journal",
+        needed: "A screenshot showing a Scale habit value visible in Journal scales or the saved daily record.",
+      },
+    ],
     zenShieldAllowedApps: {
       summary: allowedApps.summary,
       examples: [
@@ -169,6 +199,7 @@ export const GET: APIRoute = () => {
       features: absUrl("/features/"),
       zenShield: absUrl("/zen-shield/"),
       whatsNew: absUrl("/whats-new/"),
+      blog: absUrl("/blog/"),
       answers: absUrl("/answers/"),
       compare: absUrl("/compare/"),
       design: absUrl("/design/"),

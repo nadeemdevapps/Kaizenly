@@ -2,18 +2,19 @@
 import Base from "../layouts/Base.astro";
 import DownloadCta from "../components/DownloadCta.astro";
 import { app } from "../data/app.mjs";
+import { withBase } from "../config.mjs";
 
-const releaseDate = "June 29, 2026";
+const releaseDate = "July 1, 2026";
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is new in KaiZenly+ 1.4.0?",
+      name: "What is new in KaiZenly+ 1.4.3?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "KaiZenly+ 1.4.0 adds unified Journal and Habit sync, explicit Journal links for Task and Count habits, linked Count controls in Journal, synced Scale habits, independent habit snapshots in the timeline, editable Journal entries, auto-created check-in entries, full-screen habit alarms, and database schema v7.",
+        text: "KaiZenly+ 1.4.3 adds unified Journal and Habit sync, explicit Journal links for Task and Count habits, linked Count controls in Journal, synced Scale habits, independent habit snapshots in the timeline, editable Journal entries, auto-created check-in entries, full-screen habit alarms, and smoother habit setup UX.",
       },
     },
     {
@@ -53,11 +54,11 @@ const faqSchema = {
 ---
 
 <Base
-  title="What’s New in KaiZenly+ 1.4.0 — Unified Journal & Habit Sync"
+  title="What’s New in KaiZenly+ 1.4.3 — Unified Journal & Habit Sync"
   path="/whats-new/"
   softwareApp={true}
   jsonLd={[faqSchema]}
-  description="KaiZenly+ 1.4.0 adds unified Journal and Habit sync, linked Count controls, habit snapshots, editable Journal entries, synced Scale habits, full-screen alarms, and schema v7."
+  description="KaiZenly+ 1.4.3 adds unified Journal and Habit sync, linked Count controls, habit snapshots, editable Journal entries, synced Scale habits, full-screen alarms, and smoother habit setup UX."
 >
   <section class="section">
     <div class="container" style="max-width:820px">
@@ -69,8 +70,14 @@ const faqSchema = {
         editable Journal entries, independent habit snapshots, and full-screen habit alarms, while
         keeping the same local-first privacy model.
       </p>
+      <p class="lede" style="margin-top:14px">
+        This is the release that makes KaiZenly+ feel like one connected self-improvement system:
+        habits are no longer trapped in one tab while Journal lives somewhere else. The same day can
+        now carry actions, mood, ratings, counts, and reflection together.
+      </p>
       <div class="btn-row" style="margin-top:24px">
         <DownloadCta />
+        <a class="btn btn-secondary" href={withBase("/blog/unified-daily-records/")}>Read the guide</a>
       </div>
     </div>
   </section>
@@ -179,12 +186,11 @@ const faqSchema = {
           </ul>
         </article>
         <article class="card">
-          <h3>Data model</h3>
+          <h3>Daily record</h3>
           <ul class="feature-list">
-            <li>Encrypted Room database updated to schema v7.</li>
             <li>Habit records now support explicit Journal activity links.</li>
-            <li>Journal entries preserve stable activity selections and habit-value sync data.</li>
-            <li>New normalized Journal habit snapshots keep timeline history stable.</li>
+            <li>Journal entries preserve stable activity selections and habit progress context.</li>
+            <li>Daily snapshots keep timeline history stable even when habits change later.</li>
             <li>No developer server, no mandatory account, no analytics, and no ads.</li>
           </ul>
         </article>

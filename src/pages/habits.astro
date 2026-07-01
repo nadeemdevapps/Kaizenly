@@ -6,6 +6,9 @@ import DownloadCta from "../components/DownloadCta.astro";
 import { withBase } from "../config.mjs";
 
 const gallery = [
+  { file: "58_habit_journal_sync_no_sync.jpg", alt: "Habit setup showing No sync for an independent habit", caption: "Independent habit" },
+  { file: "59_habit_journal_sync_existing.jpg", alt: "Habit setup showing Existing Journal sync for a linked activity", caption: "Link existing activity" },
+  { file: "60_habit_journal_sync_new.jpg", alt: "Habit setup showing New Journal sync to create and link a Journal activity", caption: "Create Journal link" },
   { file: "09_habits_with_one_habit.webp", alt: "Habits list with a single habit to start", caption: "Start with one habit" },
   { file: "08_habit_create_sheet.webp", alt: "New habit bottom sheet, Task type", caption: "Create a Task habit" },
   { file: "25_habit_create_count_dark.webp", alt: "New count habit Drink Water with a target of ten", caption: "Or a Count goal" },
@@ -104,6 +107,15 @@ const gallery = [
           <h3>Daily snapshots</h3>
           <p>Completed independent habits and partial Count progress can appear in the Journal timeline as <strong>Habit done</strong> chips, while missed habits stay hidden.</p>
         </article>
+      </div>
+      <div class="section-head" style="margin-top:46px">
+        <h2 class="display-sm">Why this feels different in daily use</h2>
+        <p class="lede">
+          A user can mark “early bed” done from Habits and see the matching Journal activity already
+          present later. They can write a Journal entry first and still update the linked habit. They
+          can keep a personal habit independent, yet still let the saved timeline remember that it
+          happened. The result is less double-entry and a more complete memory of the day.
+        </p>
       </div>
     </div>
   </section>
